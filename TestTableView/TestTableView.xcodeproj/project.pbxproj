@@ -14,6 +14,8 @@
 		3C153CEF24EE089800BFCE95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C153CEE24EE089800BFCE95 /* Assets.xcassets */; };
 		3C153CF224EE089800BFCE95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C153CF024EE089800BFCE95 /* LaunchScreen.storyboard */; };
 		3C153CF524EE089800BFCE95 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C153CF424EE089800BFCE95 /* main.m */; };
+		3CA1A6BD254D44E5000FC52D /* CommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA1A6BC254D44E5000FC52D /* CommentListViewController.m */; };
+		3CA1A6C1254D4521000FC52D /* CommentListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CA1A6C0254D4521000FC52D /* CommentListTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		3C153CF124EE089800BFCE95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C153CF324EE089800BFCE95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C153CF424EE089800BFCE95 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3CA1A6BB254D44E5000FC52D /* CommentListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentListViewController.h; sourceTree = "<group>"; };
+		3CA1A6BC254D44E5000FC52D /* CommentListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentListViewController.m; sourceTree = "<group>"; };
+		3CA1A6BF254D4521000FC52D /* CommentListTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentListTableView.h; sourceTree = "<group>"; };
+		3CA1A6C0254D4521000FC52D /* CommentListTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentListTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,10 @@
 				3C153CE624EE089700BFCE95 /* SceneDelegate.m */,
 				3C153CE824EE089700BFCE95 /* ViewController.h */,
 				3C153CE924EE089700BFCE95 /* ViewController.m */,
+				3CA1A6BB254D44E5000FC52D /* CommentListViewController.h */,
+				3CA1A6BC254D44E5000FC52D /* CommentListViewController.m */,
+				3CA1A6BF254D4521000FC52D /* CommentListTableView.h */,
+				3CA1A6C0254D4521000FC52D /* CommentListTableView.m */,
 				3C153CEB24EE089700BFCE95 /* Main.storyboard */,
 				3C153CEE24EE089800BFCE95 /* Assets.xcassets */,
 				3C153CF024EE089800BFCE95 /* LaunchScreen.storyboard */,
@@ -147,9 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C153CEA24EE089700BFCE95 /* ViewController.m in Sources */,
+				3CA1A6BD254D44E5000FC52D /* CommentListViewController.m in Sources */,
 				3C153CE424EE089700BFCE95 /* AppDelegate.m in Sources */,
 				3C153CF524EE089800BFCE95 /* main.m in Sources */,
 				3C153CE724EE089700BFCE95 /* SceneDelegate.m in Sources */,
+				3CA1A6C1254D4521000FC52D /* CommentListTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
