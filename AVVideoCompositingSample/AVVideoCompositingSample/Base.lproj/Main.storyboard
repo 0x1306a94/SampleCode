@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="feO-7W-wJo" customClass="SSVideoPreviewView">
+                                <rect key="frame" x="50" y="144" width="314" height="558"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="feO-7W-wJo" secondAttribute="height" multiplier="9:16" id="5Lh-nC-sOj"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="57" translatesAutoresizingMaskIntoConstraints="NO" id="vSz-8Q-NKh">
+                                <rect key="frame" x="103.5" y="720" width="207" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0c0-YZ-Rz7">
+                                        <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="播放"/>
+                                        <connections>
+                                            <action selector="playButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gWc-e7-682"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYe-uO-OxS">
+                                        <rect key="frame" x="88" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="停止"/>
+                                        <connections>
+                                            <action selector="stopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ynS-Su-tTJ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xw0-Om-9Xh">
+                                        <rect key="frame" x="176" y="0.0" width="31" height="30"/>
+                                        <state key="normal" title="导出"/>
+                                        <connections>
+                                            <action selector="exportButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fff-17-icW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="feO-7W-wJo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Wnp-fN-kMW"/>
+                            <constraint firstItem="feO-7W-wJo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="YAy-ER-DdB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="feO-7W-wJo" secondAttribute="trailing" constant="50" id="dlp-6f-mrK"/>
+                            <constraint firstItem="vSz-8Q-NKh" firstAttribute="top" secondItem="feO-7W-wJo" secondAttribute="bottom" constant="18" id="jN6-mm-ZhI"/>
+                            <constraint firstItem="vSz-8Q-NKh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mY5-RT-myQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="exportButton" destination="Xw0-Om-9Xh" id="2Df-Bf-7x7"/>
+                        <outlet property="playButton" destination="0c0-YZ-Rz7" id="QWw-eN-Xea"/>
+                        <outlet property="previewView" destination="feO-7W-wJo" id="Pce-Lx-Kbd"/>
+                        <outlet property="stopButton" destination="gYe-uO-OxS" id="UW9-Lw-bWo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="129"/>
+        </scene>
+    </scenes>
+</document>
