@@ -27,54 +27,54 @@
 @implementation SSVideoOverlayItem
 #if DEBUG
 - (void)dealloc {
-    NSLog(@"[%@ dealloc]", NSStringFromClass(self.class));
+	NSLog(@"[%@ dealloc]", NSStringFromClass(self.class));
 }
 #endif
 - (instancetype)initWithImage:(UIImage *)image timeRange:(CMTimeRange)timeRange {
-    if (self == [super init]) {
-        self.image     = image;
-        self.timeRange = timeRange;
-        _primitiveType = MTLPrimitiveTypeTriangleStrip;
-        _vertexCount   = 4;
-    }
-    return self;
+	if (self == [super init]) {
+		self.image     = image;
+		self.timeRange = timeRange;
+		_primitiveType = MTLPrimitiveTypeTriangleStrip;
+		_vertexCount   = 4;
+	}
+	return self;
 }
 
 static inline size_t FICByteAlign(size_t width, size_t alignment) {
-    return ((width + (alignment - 1)) / alignment) * alignment;
+	return ((width + (alignment - 1)) / alignment) * alignment;
 }
 
 static inline size_t FICByteAlignForCoreAnimation(size_t bytesPerRow) {
-    return FICByteAlign(bytesPerRow, 64);  // 跟 CPU 的高速缓存器有关
+	return FICByteAlign(bytesPerRow, 64);  // 跟 CPU 的高速缓存器有关
 }
 
 - (id<MTLTexture>)createMTLTexture:(MTKTextureLoader *)loader device:(id<MTLDevice>)device {
-    if (_texture) {
-        return _texture;
-    }
+	if (_texture) {
+		return _texture;
+	}
 
-    CGImageRef imageRef = _image.CGImage;
-    if (!imageRef) {
-        return nil;
-    }
+	CGImageRef imageRef = _image.CGImage;
+	if (!imageRef) {
+		return nil;
+	}
 
-    //    NSError *error = nil;
-    //    _texture       = [loader newTextureWithCGImage:imageRef options:@{MTKTextureLoaderOptionSRGB: @(NO)} error:&error];
-    //    if (error) {
-    //        NSLog(@"newTextureWithCGImage!:%@", error);
-    //    }
-    size_t width            = CGImageGetWidth(imageRef);
-    size_t height           = CGImageGetHeight(imageRef);
-    size_t bitsPerComponent = CGImageGetBitsPerComponent(imageRef);
-    size_t bitsPerPixel     = CGImageGetBitsPerPixel(imageRef);
+	//    NSError *error = nil;
+	//    _texture       = [loader newTextureWithCGImage:imageRef options:@{MTKTextureLoaderOptionSRGB: @(NO)} error:&error];
+	//    if (error) {
+	//        NSLog(@"newTextureWithCGImage!:%@", error);
+	//    }
+	size_t width            = CGImageGetWidth(imageRef);
+	size_t height           = CGImageGetHeight(imageRef);
+	size_t bitsPerComponent = CGImageGetBitsPerComponent(imageRef);
+	size_t bitsPerPixel     = CGImageGetBitsPerPixel(imageRef);
 
-    CGColorSpaceRef colorSpace = CGImageGetColorSpace(imageRef);
+	CGColorSpaceRef colorSpace = CGImageGetColorSpace(imageRef);
 
-    CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(imageRef);
+	CGImageAlphaInfo alphaInfo = CGImageGetAlphaInfo(imageRef);
 
-    CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault | alphaInfo;
+	CGBitmapInfo bitmapInfo = kCGBitmapByteOrderDefault | alphaInfo;
 
-    CGRect rect = CGRectMake(0, 0, width, height);
+	CGRect rect = CGRectMake(0, 0, width, height);
 
 #if 0
     // 多重采样
@@ -93,123 +93,123 @@ static inline size_t FICByteAlignForCoreAnimation(size_t bytesPerRow) {
     textureDes.usage                 = MTLTextureUsageShaderRead;
     textureDes.storageMode           = MTLStorageModeShared;
 #else
-    size_t imageRowLength = (bitsPerPixel / bitsPerComponent * width);
-    CGContextRef context  = CGBitmapContextCreate(NULL, width, height, bitsPerComponent, imageRowLength, colorSpace, bitmapInfo);
+	size_t imageRowLength = (bitsPerPixel / bitsPerComponent * width);
+	CGContextRef context  = CGBitmapContextCreate(NULL, width, height, bitsPerComponent, imageRowLength, colorSpace, bitmapInfo);
 
-    CGContextDrawImage(context, rect, imageRef);
-    MTLTextureDescriptor *textureDes = [[MTLTextureDescriptor alloc] init];
-    textureDes.textureType           = MTLTextureType2D;
-    textureDes.width                 = width;
-    textureDes.height                = height;
-    textureDes.sampleCount           = 1;
-    textureDes.pixelFormat           = MTLPixelFormatRGBA8Unorm;
-    textureDes.usage                 = MTLTextureUsageShaderRead;
-    textureDes.storageMode           = MTLStorageModeShared;
+	CGContextDrawImage(context, rect, imageRef);
+	MTLTextureDescriptor *textureDes = [[MTLTextureDescriptor alloc] init];
+	textureDes.textureType           = MTLTextureType2D;
+	textureDes.width                 = width;
+	textureDes.height                = height;
+	textureDes.sampleCount           = 1;
+	textureDes.pixelFormat           = MTLPixelFormatRGBA8Unorm;
+	textureDes.usage                 = MTLTextureUsageShaderRead;
+	textureDes.storageMode           = MTLStorageModeShared;
 #endif
-    _texture = [device newTextureWithDescriptor:textureDes];
+	_texture = [device newTextureWithDescriptor:textureDes];
 
-    void *imageData  = CGBitmapContextGetData(context);
-    MTLRegion region = MTLRegionMake2D(0, 0, width, height);
-    [_texture replaceRegion:region mipmapLevel:0 withBytes:imageData bytesPerRow:imageRowLength];
-    CGContextRelease(context);
-    return _texture;
+	void *imageData  = CGBitmapContextGetData(context);
+	MTLRegion region = MTLRegionMake2D(0, 0, width, height);
+	[_texture replaceRegion:region mipmapLevel:0 withBytes:imageData bytesPerRow:imageRowLength];
+	CGContextRelease(context);
+	return _texture;
 }
 
 - (id<MTLBuffer>)createVertexBuffer:(id<MTLDevice>)device {
-    if (_vertexBuffer) {
-        return _vertexBuffer;
-    }
+	if (_vertexBuffer) {
+		return _vertexBuffer;
+	}
 
-    _primitiveType    = MTLPrimitiveTypeTriangleStrip;
-    _vertexCount      = 4;
-    CGRect renderRect = self.metlRect;
-    CGSize renderSize = self.renderSize;
-    float vertices[16], sourceCoordinates[8];
-    genMTLVertices(renderRect, renderSize, vertices, YES, NO);
-    replaceArrayElements(sourceCoordinates, (void *)kMTLTextureCoordinatesIdentity, 8);
-    SSVertex vertexData[4] = {0};
-    for (int i = 0; i < 4; i++) {
-        vertexData[i] = (SSVertex){
-            {vertices[(i * 4)], vertices[(i * 4) + 1], vertices[(i * 4) + 2], vertices[(i * 4) + 3]},
-            {sourceCoordinates[(i * 2)], sourceCoordinates[(i * 2) + 1]},
-        };
-    }
-    _vertexBuffer = [device newBufferWithBytes:vertexData length:sizeof(vertexData) options:MTLResourceStorageModeShared];
-    return _vertexBuffer;
+	_primitiveType    = MTLPrimitiveTypeTriangleStrip;
+	_vertexCount      = 4;
+	CGRect renderRect = self.metlRect;
+	CGSize renderSize = self.renderSize;
+	float vertices[16], sourceCoordinates[8];
+	genMTLVertices(renderRect, renderSize, vertices, YES, NO);
+	replaceArrayElements(sourceCoordinates, (void *)kMTLTextureCoordinatesIdentity, 8);
+	SSVertex vertexData[4] = {0};
+	for (int i = 0; i < 4; i++) {
+		vertexData[i] = (SSVertex){
+		    {vertices[(i * 4)], vertices[(i * 4) + 1], vertices[(i * 4) + 2], vertices[(i * 4) + 3]},
+		    {sourceCoordinates[(i * 2)], sourceCoordinates[(i * 2) + 1]},
+		};
+	}
+	_vertexBuffer = [device newBufferWithBytes:vertexData length:sizeof(vertexData) options:MTLResourceStorageModeShared];
+	return _vertexBuffer;
 }
 
 - (id<MTLBuffer>)createUniformBuffer:(id<MTLDevice>)device {
-    if (_uniformBuffer) {
-        return _uniformBuffer;
-    }
+	if (_uniformBuffer) {
+		return _uniformBuffer;
+	}
 
-    SSUniform uniform = (SSUniform){
-        .transformed = false,
-        .projection  = getMetalMatrixFromGLKMatrix(GLKMatrix4Identity),
-        //        .view        = getMetalMatrixFromGLKMatrix(GLKMatrix4Identity),
-        .model = getMetalMatrixFromGLKMatrix(GLKMatrix4Identity),
-    };
+	SSUniform uniform = (SSUniform){
+	    .transformed = false,
+	    .projection  = getMetalMatrixFromGLKMatrix(GLKMatrix4Identity),
+	    //        .view        = getMetalMatrixFromGLKMatrix(GLKMatrix4Identity),
+	    .model = getMetalMatrixFromGLKMatrix(GLKMatrix4Identity),
+	};
 
-    if (self.angle != 0) {
+	if (self.angle != 0) {
 
-        CGRect renderRect = self.metlRect;
-        CGSize renderSize = self.renderSize;
+		CGRect renderRect = self.metlRect;
+		CGSize renderSize = self.renderSize;
 
-        // 修改旋转中心
-        CGPoint controlPoint     = CGPointMake(CGRectGetMidX(renderRect), CGRectGetMidY(renderRect));
-        GLKMatrix4 transformto   = GLKMatrix4MakeTranslation(-controlPoint.x, -controlPoint.y, 0);
-        GLKMatrix4 rotateMatrix  = GLKMatrix4MakeZRotation(GLKMathDegreesToRadians(-self.angle));
-        GLKMatrix4 transformback = GLKMatrix4MakeTranslation(controlPoint.x, controlPoint.y, 0);
+		// 修改旋转中心
+		CGPoint controlPoint     = CGPointMake(CGRectGetMidX(renderRect), CGRectGetMidY(renderRect));
+		GLKMatrix4 transformto   = GLKMatrix4MakeTranslation(-controlPoint.x, -controlPoint.y, 0);
+		GLKMatrix4 rotateMatrix  = GLKMatrix4MakeZRotation(GLKMathDegreesToRadians(-self.angle));
+		GLKMatrix4 transformback = GLKMatrix4MakeTranslation(controlPoint.x, controlPoint.y, 0);
 
-        GLKMatrix4 modelMatrix = GLKMatrix4Identity;
-        modelMatrix            = GLKMatrix4Multiply(transformto, modelMatrix);
-        modelMatrix            = GLKMatrix4Multiply(rotateMatrix, modelMatrix);
-        modelMatrix            = GLKMatrix4Multiply(transformback, modelMatrix);
+		GLKMatrix4 modelMatrix = GLKMatrix4Identity;
+		modelMatrix            = GLKMatrix4Multiply(transformto, modelMatrix);
+		modelMatrix            = GLKMatrix4Multiply(rotateMatrix, modelMatrix);
+		modelMatrix            = GLKMatrix4Multiply(transformback, modelMatrix);
 
-        GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(0, renderSize.width, renderSize.height, 0, -1, 1);
+		GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(0, renderSize.width, renderSize.height, 0, -1, 1);
 
-        modelMatrix = GLKMatrix4Multiply(GLKMatrix4MakeTranslation(0, 500, 0), modelMatrix);
+		modelMatrix = GLKMatrix4Multiply(GLKMatrix4MakeTranslation(0, 500, 0), modelMatrix);
 
-        uniform.transformed = true;
-        uniform.projection  = getMetalMatrixFromGLKMatrix(projectionMatrix);
-        //                uniform.view        = getMetalMatrixFromGLKMatrix(viewMatrix);
-        uniform.model = getMetalMatrixFromGLKMatrix(modelMatrix);
-    }
+		uniform.transformed = true;
+		uniform.projection  = getMetalMatrixFromGLKMatrix(projectionMatrix);
+		//                uniform.view        = getMetalMatrixFromGLKMatrix(viewMatrix);
+		uniform.model = getMetalMatrixFromGLKMatrix(modelMatrix);
+	}
 
-    _uniformBuffer = [device newBufferWithBytes:&uniform length:sizeof(uniform) options:MTLResourceStorageModeShared];
+	_uniformBuffer = [device newBufferWithBytes:&uniform length:sizeof(uniform) options:MTLResourceStorageModeShared];
 
-    return _uniformBuffer;
+	return _uniformBuffer;
 }
 
 - (SSUniform)createUniformAtTween:(Float64)tween {
 
-    Float64 angle = tween * 360;
-    Float64 tx    = 0;
-    Float64 ty    = tween * 400;
+	Float64 angle = tween * 360;
+	Float64 tx    = 0;
+	Float64 ty    = tween * 400;
 
-    CGRect renderRect = self.metlRect;
-    CGSize renderSize = self.renderSize;
+	CGRect renderRect = self.metlRect;
+	CGSize renderSize = self.renderSize;
 
-    // 修改旋转中心
-    CGPoint controlPoint     = CGPointMake(CGRectGetMidX(renderRect), CGRectGetMidY(renderRect));
-    GLKMatrix4 transformto   = GLKMatrix4MakeTranslation(-controlPoint.x, -controlPoint.y, 0);
-    GLKMatrix4 rotateMatrix  = GLKMatrix4MakeZRotation(GLKMathDegreesToRadians(angle));
-    GLKMatrix4 transformback = GLKMatrix4MakeTranslation(controlPoint.x, controlPoint.y, 0);
+	// 修改旋转中心
+	CGPoint controlPoint     = CGPointMake(CGRectGetMidX(renderRect), CGRectGetMidY(renderRect));
+	GLKMatrix4 transformto   = GLKMatrix4MakeTranslation(-controlPoint.x, -controlPoint.y, 0);
+	GLKMatrix4 rotateMatrix  = GLKMatrix4MakeZRotation(GLKMathDegreesToRadians(angle));
+	GLKMatrix4 transformback = GLKMatrix4MakeTranslation(controlPoint.x, controlPoint.y, 0);
 
-    GLKMatrix4 modelMatrix = GLKMatrix4Identity;
-    modelMatrix            = GLKMatrix4Multiply(transformto, modelMatrix);
-    modelMatrix            = GLKMatrix4Multiply(rotateMatrix, modelMatrix);
-    modelMatrix            = GLKMatrix4Multiply(transformback, modelMatrix);
+	GLKMatrix4 modelMatrix = GLKMatrix4Identity;
+	modelMatrix            = GLKMatrix4Multiply(transformto, modelMatrix);
+	modelMatrix            = GLKMatrix4Multiply(rotateMatrix, modelMatrix);
+	modelMatrix            = GLKMatrix4Multiply(transformback, modelMatrix);
 
-    GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(0, renderSize.width, renderSize.height, 0, -1, 1);
+	GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(0, renderSize.width, renderSize.height, 0, -1, 1);
 
-    modelMatrix = GLKMatrix4Multiply(GLKMatrix4MakeTranslation(tx, ty, 0), modelMatrix);
+	modelMatrix = GLKMatrix4Multiply(GLKMatrix4MakeTranslation(tx, ty, 0), modelMatrix);
 
-    return (SSUniform){
-        .transformed = true,
-        .projection  = getMetalMatrixFromGLKMatrix(projectionMatrix),
-        .model       = getMetalMatrixFromGLKMatrix(modelMatrix),
-    };
+	return (SSUniform){
+	    .transformed = true,
+	    .projection  = getMetalMatrixFromGLKMatrix(projectionMatrix),
+	    .model       = getMetalMatrixFromGLKMatrix(modelMatrix),
+	};
 }
 @end
 
