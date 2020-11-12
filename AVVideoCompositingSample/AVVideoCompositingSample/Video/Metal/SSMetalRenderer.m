@@ -42,6 +42,7 @@ static vector_float3 kColorConversion601FullRangeOffset = (vector_float3){
 @property (nonatomic, strong) id<MTLRenderPipelineState> defaultMainPipelineState;
 @property (nonatomic, strong) MTKTextureLoader *loader;
 @property (nonatomic, assign) CVMetalTextureCacheRef videoTextureCache;  //need release
+@property (nonatomic, strong) dispatch_semaphore_t semaphore;
 @end
 
 @implementation SSMetalRenderer
@@ -105,6 +106,8 @@ static vector_float3 kColorConversion601FullRangeOffset = (vector_float3){
         NSAssert(NO, @"%@", *error);
         return;
     }
+    
+    _semaphore = dispatch_semaphore_create(0);
 }
 
 #pragma mark - pipelines
@@ -200,6 +203,10 @@ static vector_float3 kColorConversion601FullRangeOffset = (vector_float3){
         CFRelease(_videoTextureCache);
         _videoTextureCache = NULL;
     }
+    if (_semaphore) {
+        dispatch_semaphore_signal(_semaphore);
+        _semaphore = NULL;
+    }
     _defaultMainPipelineState = nil;
 }
 
@@ -278,7 +285,13 @@ static vector_float3 kColorConversion601FullRangeOffset = (vector_float3){
         }
 
         [renderEncoder endEncoding];
+        __weak typeof(self) weakSlef = self;
+        [commandBuffer addCompletedHandler:^(id<MTLCommandBuffer> _Nonnull buffer) {
+            __strong typeof(self) self = weakSlef;
+            dispatch_semaphore_signal(self.semaphore);
+        }];
         [commandBuffer commit];
+        dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
     }
 
     return outputPixels;
