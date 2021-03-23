@@ -40,14 +40,6 @@
 	return self;
 }
 
-static inline size_t FICByteAlign(size_t width, size_t alignment) {
-	return ((width + (alignment - 1)) / alignment) * alignment;
-}
-
-static inline size_t FICByteAlignForCoreAnimation(size_t bytesPerRow) {
-	return FICByteAlign(bytesPerRow, 64);  // 跟 CPU 的高速缓存器有关
-}
-
 - (id<MTLTexture>)createMTLTexture:(MTKTextureLoader *)loader device:(id<MTLDevice>)device {
 	if (_texture) {
 		return _texture;
@@ -76,23 +68,6 @@ static inline size_t FICByteAlignForCoreAnimation(size_t bytesPerRow) {
 
 	CGRect rect = CGRectMake(0, 0, width, height);
 
-#if 0
-    // 多重采样
-    size_t imageRowLength = FICByteAlignForCoreAnimation((bitsPerPixel / bitsPerComponent) * width) * 4;
-    CGContextRef context  = CGBitmapContextCreate(NULL, width, height, bitsPerComponent, imageRowLength, colorSpace, bitmapInfo);
-    //    CGContextTranslateCTM(context, 0, height);
-    //    CGContextScaleCTM(context, 1.0, -1.0);
-
-    CGContextDrawImage(context, rect, imageRef);
-    MTLTextureDescriptor *textureDes = [[MTLTextureDescriptor alloc] init];
-    textureDes.textureType           = MTLTextureType2DMultisample;
-    textureDes.width                 = width;
-    textureDes.height                = height;
-    textureDes.sampleCount           = 4;
-    textureDes.pixelFormat           = MTLPixelFormatRGBA8Unorm;
-    textureDes.usage                 = MTLTextureUsageShaderRead;
-    textureDes.storageMode           = MTLStorageModeShared;
-#else
 	size_t imageRowLength = (bitsPerPixel / bitsPerComponent * width);
 	CGContextRef context  = CGBitmapContextCreate(NULL, width, height, bitsPerComponent, imageRowLength, colorSpace, bitmapInfo);
 
@@ -105,7 +80,7 @@ static inline size_t FICByteAlignForCoreAnimation(size_t bytesPerRow) {
 	textureDes.pixelFormat           = MTLPixelFormatRGBA8Unorm;
 	textureDes.usage                 = MTLTextureUsageShaderRead;
 	textureDes.storageMode           = MTLStorageModeShared;
-#endif
+
 	_texture = [device newTextureWithDescriptor:textureDes];
 
 	void *imageData  = CGBitmapContextGetData(context);

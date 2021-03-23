@@ -43,9 +43,7 @@ vertex_attachment_main(uint vid [[ vertex_id ]], // vertex_id是顶点shader每�
 			constant SSUniform & uniforms [[ buffer(SSVertexInputIndexUniforms) ]]) { // buffer表明是缓存数据，SSVertexInputIndexUniforms是索引
 	RasterizerData out;
 	if (uniforms.transformed) {
-//		out.clipSpacePosition = uniforms.projection * uniforms.view * uniforms.model * vertexArray[vid].position;
         out.clipSpacePosition = uniforms.projection * uniforms.model * vertexArray[vid].position;
-//		out.clipSpacePosition = uniforms.model * vertexArray[vid].position;
 	} else {
 		out.clipSpacePosition = vertexArray[vid].position;
 	}
