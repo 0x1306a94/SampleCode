@@ -1,4 +1,5 @@
 PODS:
+  - IQKeyboardManager (6.5.6)
   - LookinServer (1.0.2)
   - QMUIKit/QMUIComponents/QMUILabel (4.2.3):
     - QMUIKit/QMUICore
@@ -15,18 +16,21 @@ PODS:
   - QMUIKit/QMUIWeakObjectContainer (4.2.3)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - LookinServer
   - QMUIKit/QMUIComponents/QMUITextView
 
 SPEC REPOS:
   trunk:
+    - IQKeyboardManager
     - LookinServer
     - QMUIKit
 
 SPEC CHECKSUMS:
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   LookinServer: d6874df8b58096c8d463817b6baaa3abc21d31f7
   QMUIKit: c047f987b14be9f48df47cb934a2d21ccd7ef4b6
 
-PODFILE CHECKSUM: a664f3b86e413ee0364785fc79dcb22e64c2b28a
+PODFILE CHECKSUM: d36570886e846ccbbd41ed220f8647031600231c
 
 COCOAPODS: 1.10.1

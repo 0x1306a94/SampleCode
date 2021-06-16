@@ -20,6 +20,9 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
 
+	self.navigationController.navigationBar.translucent = NO;
+	self.edgesForExtendedLayout = UIRectEdgeNone;
+
 	self.view.backgroundColor      = [UIColor colorWithRed:(0xf8 / 255.0) green:(0xf8 / 255.0) blue:(0xf8 / 255.0) alpha:1.0];
 	self.tableView.backgroundColor = [UIColor colorWithRed:(0xf8 / 255.0) green:(0xf8 / 255.0) blue:(0xf8 / 255.0) alpha:1.0];
 	[self.view addSubview:self.tableView];

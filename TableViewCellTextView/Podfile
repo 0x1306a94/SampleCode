@@ -6,6 +6,7 @@ target 'TableViewCellTextView' do
   use_frameworks!
   pod 'QMUIKit/QMUIComponents/QMUITextView'
 	pod 'LookinServer'
+	pod 'IQKeyboardManager'
   # Pods for TableViewCellTextView
 
 end
