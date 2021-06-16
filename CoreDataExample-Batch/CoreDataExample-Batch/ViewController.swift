@@ -115,12 +115,12 @@ class ViewController: UIViewController {
 
 		let req = NSBatchUpdateRequest(entityName: "User")
 		req.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
-			NSPredicate(format: "%K = %d", #keyPath(User.age), 26),
-			NSPredicate(format: "%K = %d", #keyPath(User.sync), true),
-			NSPredicate(format: "%K = %d", #keyPath(User.rank), 1),
+			NSPredicate(format: "%K = %d", #keyPath(User.age), 17),
+			NSPredicate(format: "%K = %d", #keyPath(User.sync), false),
+//			NSPredicate(format: "%K = %d", #keyPath(User.rank), 1),
 		])
 		req.propertiesToUpdate = [
-			"sync": false,
+			"sync": true,
 		]
 
 		req.resultType = .updatedObjectIDsResultType
@@ -190,8 +190,9 @@ extension ViewController: NSFetchedResultsControllerDelegate {
 		case .move:
 			guard let indexPath = indexPath, let newIndexPath = newIndexPath else { return }
 			print(indexPath, newIndexPath)
-			tableView.deleteRows(at: [indexPath], with: .automatic)
-			tableView.insertRows(at: [newIndexPath], with: .automatic)
+			tableView.moveRow(at: indexPath, to: newIndexPath)
+//			tableView.deleteRows(at: [indexPath], with: .automatic)
+//			tableView.insertRows(at: [newIndexPath], with: .automatic)
 		@unknown default:
 			fatalError()
 		}
