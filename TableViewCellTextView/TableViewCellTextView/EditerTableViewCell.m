@@ -23,8 +23,10 @@
 	self.layer.cornerRadius  = 10;
 	self.layer.masksToBounds = YES;
 
-	self.backgroundColor = UIColor.orangeColor;
+	self.backgroundColor          = UIColor.orangeColor;
 	self.textView.backgroundColor = UIColor.lightGrayColor;
+	self.textView.scrollEnabled   = NO;
+	self.textView.textContainerInset = UIEdgeInsetsZero;
 }
 
 - (void)setFrame:(CGRect)frame {
@@ -41,7 +43,7 @@
 	self.nameLabel.text = model.title;
 	self.textView.text  = model.content ?: @"";
 
-	self.textView.placeholder = model.title;
+	self.textView.placeholder      = model.title;
 	self.textView.placeholderColor = UIColor.lightTextColor;
 
 	self.textView.delegate = self;
@@ -61,10 +63,9 @@
 	CGFloat h = MAX(self.model.minInputHeight, height);
 	if (h != self.model.inputHeight) {
 		self.model.inputHeight = h;
-		// 触发高度代理回调
-		[self.tableView beginUpdates];
-
-		[self.tableView endUpdates];
+		if ([self.delegate respondsToSelector:@selector(editerTableViewCell:newHeightAfterTextChanged:)]) {
+			[self.delegate editerTableViewCell:self newHeightAfterTextChanged:h];
+		}
 	}
 }
 @end

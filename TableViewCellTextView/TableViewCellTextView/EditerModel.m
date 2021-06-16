@@ -12,8 +12,8 @@
 	if (self == [super init]) {
 		_topSpacing     = 40;
 		_bottomSpacing  = 15;
-		_minInputHeight = 30;
-		_inputHeight    = 30;
+		_minInputHeight = 20;
+		_inputHeight    = _minInputHeight;
 	}
 	return self;
 }

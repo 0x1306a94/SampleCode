@@ -11,9 +11,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol EditerTableViewCellDelegate;
+
 @interface EditerTableViewCell : UITableViewCell
-@property (nonatomic, weak) UITableView *tableView;
+@property (nonatomic, weak) id<EditerTableViewCellDelegate> delegate;
 - (void)updateModel:(EditerModel *)model;
+@end
+
+@protocol EditerTableViewCellDelegate <NSObject>
+
+@optional
+- (void)editerTableViewCell:(EditerTableViewCell *)cell newHeightAfterTextChanged:(CGFloat)height;
+
 @end
 
 NS_ASSUME_NONNULL_END
