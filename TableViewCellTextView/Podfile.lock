@@ -1,0 +1,32 @@
+PODS:
+  - LookinServer (1.0.2)
+  - QMUIKit/QMUIComponents/QMUILabel (4.2.3):
+    - QMUIKit/QMUICore
+  - QMUIKit/QMUIComponents/QMUIMultipleDelegates (4.2.3):
+    - QMUIKit/QMUICore
+  - QMUIKit/QMUIComponents/QMUITextView (4.2.3):
+    - QMUIKit/QMUIComponents/QMUILabel
+    - QMUIKit/QMUIComponents/QMUIMultipleDelegates
+    - QMUIKit/QMUICore
+  - QMUIKit/QMUICore (4.2.3):
+    - QMUIKit/QMUILog
+    - QMUIKit/QMUIWeakObjectContainer
+  - QMUIKit/QMUILog (4.2.3)
+  - QMUIKit/QMUIWeakObjectContainer (4.2.3)
+
+DEPENDENCIES:
+  - LookinServer
+  - QMUIKit/QMUIComponents/QMUITextView
+
+SPEC REPOS:
+  trunk:
+    - LookinServer
+    - QMUIKit
+
+SPEC CHECKSUMS:
+  LookinServer: d6874df8b58096c8d463817b6baaa3abc21d31f7
+  QMUIKit: c047f987b14be9f48df47cb934a2d21ccd7ef4b6
+
+PODFILE CHECKSUM: a664f3b86e413ee0364785fc79dcb22e64c2b28a
+
+COCOAPODS: 1.10.1
