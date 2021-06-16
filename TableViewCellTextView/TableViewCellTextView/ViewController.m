@@ -127,6 +127,7 @@
 	// 底部间距
 	frame.origin.y -= 15;
 
+	// 调整位置,避免被键盘遮挡
 	NSLog(@"%@", NSStringFromCGRect(self.keyboardRect));
 	NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
 	if (indexPath && !CGRectIsNull(self.keyboardRect) && CGRectGetMaxY(frame) > CGRectGetMinY(self.keyboardRect)) {
