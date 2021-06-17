@@ -115,12 +115,12 @@ class ViewController: UIViewController {
 
 		let req = NSBatchUpdateRequest(entityName: "User")
 		req.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [
-			NSPredicate(format: "%K = %d", #keyPath(User.age), 17),
-			NSPredicate(format: "%K = %d", #keyPath(User.sync), false),
+			NSPredicate(format: "%K = %d", #keyPath(User.age), 11),
+			NSPredicate(format: "%K = %d", #keyPath(User.sync), true),
 //			NSPredicate(format: "%K = %d", #keyPath(User.rank), 1),
 		])
 		req.propertiesToUpdate = [
-			"sync": true,
+			"sync": false,
 		]
 
 		req.resultType = .updatedObjectIDsResultType
@@ -166,6 +166,9 @@ extension ViewController: UITableViewDataSource {
 	}
 }
 
+// MARK: - NSFetchedResultsControllerDelegate
+/// 官方文档
+/// https://developer.apple.com/documentation/coredata/nsfetchedresultscontrollerdelegate
 extension ViewController: NSFetchedResultsControllerDelegate {
 	func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
 		tableView.beginUpdates()
@@ -181,18 +184,22 @@ extension ViewController: NSFetchedResultsControllerDelegate {
 			guard let indexPath = indexPath else { return }
 			tableView.deleteRows(at: [indexPath], with: .automatic)
 		case .update:
-			if newIndexPath == indexPath {
-				tableView.reloadRows(at: [indexPath!], with: .automatic)
-			} else if let indexPath = indexPath, let newIndexPath = newIndexPath {
-				tableView.deleteRows(at: [indexPath], with: .automatic)
-				tableView.insertRows(at: [newIndexPath], with: .automatic)
+			print("update", indexPath, newIndexPath)
+			if let indexPath = indexPath {
+				tableView.reloadRows(at: [indexPath], with: .automatic)
 			}
+//			if newIndexPath == indexPath {
+//				tableView.reloadRows(at: [indexPath!], with: .automatic)
+//			} else if let indexPath = indexPath, let newIndexPath = newIndexPath {
+//				tableView.deleteRows(at: [indexPath], with: .automatic)
+//				tableView.insertRows(at: [newIndexPath], with: .automatic)
+//			}
 		case .move:
 			guard let indexPath = indexPath, let newIndexPath = newIndexPath else { return }
-			print(indexPath, newIndexPath)
-			tableView.moveRow(at: indexPath, to: newIndexPath)
-//			tableView.deleteRows(at: [indexPath], with: .automatic)
-//			tableView.insertRows(at: [newIndexPath], with: .automatic)
+			print("move", indexPath, newIndexPath)
+//			tableView.moveRow(at: indexPath, to: newIndexPath)
+			tableView.deleteRows(at: [indexPath], with: .automatic)
+			tableView.insertRows(at: [newIndexPath], with: .automatic)
 		@unknown default:
 			fatalError()
 		}
