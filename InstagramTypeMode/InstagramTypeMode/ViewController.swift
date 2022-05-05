@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         t.textContainer.lineFragmentPadding = 0
         t.keyboardDismissMode = .onDrag
         t.backgroundColor = UIColor.orange
+        t.tintColor = UIColor.white.withAlphaComponent(0.7)
         return t
     }()
 
@@ -37,10 +38,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
+        view.backgroundColor = UIColor.white
         let font = UIFont(descriptor: font.fontDescriptor, size: maximumFontSize)
         let paraStyle = NSMutableParagraphStyle()
         paraStyle.alignment = .center
-        textView.typingAttributes = [.font: font, .paragraphStyle: paraStyle]
+        textView.typingAttributes = [.font: font, .paragraphStyle: paraStyle, .foregroundColor: UIColor.white]
 
         self.view.addSubview(textView)
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,6 +55,10 @@ class ViewController: UIViewController {
         ])
 
         textView.delegate = self
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .darkContent
     }
 }
 
@@ -173,7 +179,7 @@ extension ViewController: UITextViewDelegate {
         for lineInfo in lineInfoList {
             let font = UIFont(descriptor: font.fontDescriptor, size: lineInfo.1)
             totalLineHeight += font.lineHeight
-            textStorage.addAttributes([.paragraphStyle: paragraphStyle, .font: font], range: lineInfo.0)
+            textStorage.addAttributes([.paragraphStyle: paragraphStyle, .font: font, .foregroundColor: UIColor.white], range: lineInfo.0)
         }
         textStorage.endEditing()
 
