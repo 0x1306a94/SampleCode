@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         UIFont.systemFont(ofSize: 24, weight: .semibold)
     }()
 
+    let layout = IGSomeCustomLayoutManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,6 +31,10 @@ class ViewController: UIViewController {
         textView.textContainerInset = UIEdgeInsets.zero
         textView.textContainer.lineFragmentPadding = 0
         textView.keyboardDismissMode = .onDrag
+
+//        textView.textContainer.replaceLayoutManager(layout)
+        object_setClass(textView.layoutManager, IGSomeCustomLayoutManager.classForCoder())
+
         let font = UIFont(descriptor: font.fontDescriptor, size: maximumFontSize)
         let paraStyle = NSMutableParagraphStyle()
         paraStyle.alignment = .center
@@ -175,5 +181,22 @@ extension ViewController: UITextViewDelegate {
 //        let glyphRange = layoutManager.glyphRange(for: textView.textContainer)
 //        let rect = layoutManager.boundingRect(forGlyphRange: glyphRange, in: textView.textContainer)
 //        print(rect.maxY, height)
+    }
+}
+
+class IGSomeCustomLayoutManager: NSLayoutManager {
+    override func drawBackground(forGlyphRange glyphsToShow: NSRange, at origin: CGPoint) {
+        super.drawBackground(forGlyphRange: glyphsToShow, at: origin)
+        let kSomePadding: CGFloat = 4
+        let kSomeCornerRadius: CGFloat = 10
+        self.enumerateLineFragments(forGlyphRange: NSMakeRange(0, self.numberOfGlyphs)) { _, usedRect, _, _, _ in
+            let lineBoundingRect = usedRect // self.boundingRect(forGlyphRange: glyphRange, in: textContainer)
+            let adjustedLineRect = lineBoundingRect.insetBy(dx: -kSomePadding, dy: kSomePadding)
+            let fillColorPath = UIBezierPath(roundedRect: adjustedLineRect, cornerRadius: kSomeCornerRadius)
+            UIColor.systemPink.setFill()
+            fillColorPath.fill()
+        }
+
+//        super.drawBackground(forGlyphRange: glyphsToShow, at: origin)
     }
 }

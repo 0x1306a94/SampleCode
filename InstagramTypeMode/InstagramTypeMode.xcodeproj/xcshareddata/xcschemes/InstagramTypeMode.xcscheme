@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3C2364C62823A4DA00343066"
-               BuildableName = "testdddddd.app"
+               BuildableName = "InstagramTypeMode.app"
                BlueprintName = "InstagramTypeMode"
                ReferencedContainer = "container:InstagramTypeMode.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3C2364C62823A4DA00343066"
-            BuildableName = "testdddddd.app"
+            BuildableName = "InstagramTypeMode.app"
             BlueprintName = "InstagramTypeMode"
             ReferencedContainer = "container:InstagramTypeMode.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3C2364C62823A4DA00343066"
-            BuildableName = "testdddddd.app"
+            BuildableName = "InstagramTypeMode.app"
             BlueprintName = "InstagramTypeMode"
             ReferencedContainer = "container:InstagramTypeMode.xcodeproj">
          </BuildableReference>
