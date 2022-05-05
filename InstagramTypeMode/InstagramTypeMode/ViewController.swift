@@ -10,9 +10,22 @@ import UIKit
 // https://instagram-engineering.com/building-type-mode-for-stories-on-ios-and-android-8804e927feba
 
 class ViewController: UIViewController {
-    @IBOutlet weak var textView: UITextView!
+    var textView: UITextView = {
+        let layout = IGSomeCustomLayoutManager()
+        let textContainer = NSTextContainer()
+        let textStorage = NSTextStorage()
+        textStorage.addLayoutManager(layout)
+        layout.addTextContainer(textContainer)
+        let t = UITextView(frame: .zero, textContainer: textContainer)
+        t.textAlignment = .center
+        t.textContainerInset = UIEdgeInsets.zero
+        t.textContainer.lineFragmentPadding = 0
+        t.keyboardDismissMode = .onDrag
+        t.backgroundColor = UIColor.orange
+        return t
+    }()
 
-    @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
+    var textViewHeightConstraint: NSLayoutConstraint!
     let minimumFontSize: CGFloat = 24
     let maximumFontSize: CGFloat = 200
     let pointSize: CGFloat = 24
@@ -20,26 +33,26 @@ class ViewController: UIViewController {
         UIFont.systemFont(ofSize: 24, weight: .semibold)
     }()
 
-    let layout = IGSomeCustomLayoutManager()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
-        textView.delegate = self
-        textView.textAlignment = .center
-        textView.textContainerInset = UIEdgeInsets.zero
-        textView.textContainer.lineFragmentPadding = 0
-        textView.keyboardDismissMode = .onDrag
-
-//        textView.textContainer.replaceLayoutManager(layout)
-        object_setClass(textView.layoutManager, IGSomeCustomLayoutManager.classForCoder())
 
         let font = UIFont(descriptor: font.fontDescriptor, size: maximumFontSize)
         let paraStyle = NSMutableParagraphStyle()
         paraStyle.alignment = .center
         textView.typingAttributes = [.font: font, .paragraphStyle: paraStyle]
-        textViewHeightConstraint.constant = font.lineHeight
+
+        self.view.addSubview(textView)
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textViewHeightConstraint = textView.heightAnchor.constraint(equalToConstant: font.lineHeight)
+        NSLayoutConstraint.activate([
+            textView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 20),
+            textView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20),
+            textViewHeightConstraint,
+            textView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -100),
+        ])
+
+        textView.delegate = self
     }
 }
 
@@ -160,7 +173,7 @@ extension ViewController: UITextViewDelegate {
         for lineInfo in lineInfoList {
             let font = UIFont(descriptor: font.fontDescriptor, size: lineInfo.1)
             totalLineHeight += font.lineHeight
-            textStorage.setAttributes([.paragraphStyle: paragraphStyle, .font: font], range: lineInfo.0)
+            textStorage.addAttributes([.paragraphStyle: paragraphStyle, .font: font], range: lineInfo.0)
         }
         textStorage.endEditing()
 
@@ -188,7 +201,7 @@ class IGSomeCustomLayoutManager: NSLayoutManager {
     override func drawBackground(forGlyphRange glyphsToShow: NSRange, at origin: CGPoint) {
         super.drawBackground(forGlyphRange: glyphsToShow, at: origin)
         let kSomePadding: CGFloat = 4
-        let kSomeCornerRadius: CGFloat = 10
+        let kSomeCornerRadius: CGFloat = 6
         self.enumerateLineFragments(forGlyphRange: NSMakeRange(0, self.numberOfGlyphs)) { _, usedRect, _, _, _ in
             let lineBoundingRect = usedRect // self.boundingRect(forGlyphRange: glyphRange, in: textContainer)
             let adjustedLineRect = lineBoundingRect.insetBy(dx: -kSomePadding, dy: kSomePadding)
