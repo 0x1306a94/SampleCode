@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  FilamentSample
+//
+//  Created by king on 2022/9/26.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+GCC_PREPROCESSOR_DEFINITIONS=FILAMENT_APP_USE_METAL=1 METAL_AVAILABLE=1
