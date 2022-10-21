@@ -16,7 +16,7 @@
 #import <sys/types.h>
 
 @interface KKDelayQueue ()
-@property (nonatomic, strong) NSMapTable<NSValue *, __kindof KKDelayTask *> *tasks;
+@property (nonatomic, strong) NSMutableSet<__kindof KKDelayTask *> *tasks;
 @end
 
 @implementation KKDelayQueue {
@@ -31,7 +31,7 @@
     if (self == [super init]) {
         _kq = kqueue();
         _lock = OS_UNFAIR_LOCK_INIT;
-        self.tasks = [NSMapTable<NSValue *, __kindof KKDelayTask *> strongToStrongObjectsMapTable];
+        self.tasks = [NSMutableSet<__kindof KKDelayTask *> setWithCapacity:100];
         [self _createThread];
     }
     return self;
@@ -85,12 +85,8 @@
             EV_SET(&rev, ev.ident, EVFILT_TIMER, EV_DELETE, 0, 0, NULL);
             kevent(_kq, &rev, 1, NULL, 0, NULL);
 
-            NSValue *key = [NSValue valueWithPointer:ptr];
-            __kindof KKDelayTask *task = [self.tasks objectForKey:key];
-            if (task == nil) {
-                continue;
-            }
-            [self.tasks removeObjectForKey:key];
+            __kindof KKDelayTask *task = (__bridge KKDelayTask *)ptr;
+            [self.tasks removeObject:task];
             [task handler];
         }
         os_unfair_lock_unlock(&_lock);
@@ -117,8 +113,7 @@ static void *delay_queue_event_loop_main(void *info) {
     }
 
     os_unfair_lock_lock(&_lock);
-    NSValue *key = [NSValue valueWithPointer:(__bridge void *)task];
-    [self.tasks setObject:task forKey:key];
+    [self.tasks addObject:task];
     os_unfair_lock_unlock(&_lock);
 
     uintptr_t ptr = (uintptr_t)(__bridge void *)task;
@@ -136,10 +131,10 @@ static void *delay_queue_event_loop_main(void *info) {
 
     BOOL needRemove = NO;
     os_unfair_lock_lock(&_lock);
-    NSValue *key = [NSValue valueWithPointer:(__bridge void *)task];
-    __kindof KKDelayTask *existTask = [self.tasks objectForKey:key];
-    needRemove = existTask != nil;
-    [self.tasks removeObjectForKey:key];
+    if ([self.tasks containsObject:task]) {
+        needRemove = YES;
+        [self.tasks removeObject:task];
+    }
     os_unfair_lock_unlock(&_lock);
 
     if (needRemove) {
