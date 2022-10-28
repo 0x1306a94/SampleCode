@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  ChatSample
+//
+//  Created by king on 2022/10/28.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+OTHER_SWIFT_FLAGS=$(inherited) -D USE_COLLECTION_VIEW
