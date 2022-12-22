@@ -1,5 +1,6 @@
 mod bridge;
 pub mod logger;
+pub mod protos;
 // use logger::*;
 // #[cxx::bridge(namespace = "im::core")]
 // mod ffi {
@@ -15,8 +16,10 @@ pub mod logger;
 mod tests {
     #[test]
     fn it_works() {
-        let logger = crate::logger::new_logger();
-        logger.warning("Hello world".to_string());
-        logger.info("Hello world".to_string());
+        unsafe {
+            let logger = crate::logger::new_logger();
+            logger.warning("Hello world".to_string());
+            logger.info("Hello world".to_string());
+        }
     }
 }

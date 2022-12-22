@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+enum CMDID {
+    None = 0;
+    Setup = 100;
+}
+
+message SetupParams {
+    // 用户id
+    string uid = 1;
+    // 用户名称
+    string name = 2;
+}
