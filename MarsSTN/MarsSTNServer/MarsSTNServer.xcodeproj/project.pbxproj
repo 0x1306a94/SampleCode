@@ -1,0 +1,417 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C4413452927378A00677767 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4413442927378A00677767 /* AppDelegate.m */; };
+		3C4413482927378A00677767 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4413472927378A00677767 /* ViewController.m */; };
+		3C44134A2927378C00677767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C4413492927378C00677767 /* Assets.xcassets */; };
+		3C44134D2927378C00677767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C44134B2927378C00677767 /* Main.storyboard */; };
+		3C44134F2927378C00677767 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C44134E2927378C00677767 /* main.m */; };
+		4AB7B9870CD5F0DE32B27314 /* Pods_MarsSTNServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA0538ABF967E2209DD04D5D /* Pods_MarsSTNServer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3C4413402927378A00677767 /* MarsSTNServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsSTNServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C4413432927378A00677767 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3C4413442927378A00677767 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3C4413462927378A00677767 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3C4413472927378A00677767 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3C4413492927378C00677767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3C44134C2927378C00677767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3C44134E2927378C00677767 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3C4413502927378C00677767 /* MarsSTNServer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarsSTNServer.entitlements; sourceTree = "<group>"; };
+		3C441356292741FE00677767 /* KKTransportPacketType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKTransportPacketType.h; sourceTree = "<group>"; };
+		3C441357292741FE00677767 /* KKTransportPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKTransportPacket.h; sourceTree = "<group>"; };
+		3C57AA55292A1D5D0096BB4B /* NetMsgXpHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetMsgXpHeader.h; sourceTree = "<group>"; };
+		67BF28C366E1FC5B60B8825F /* Pods-MarsSTNServer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsSTNServer.debug.xcconfig"; path = "Target Support Files/Pods-MarsSTNServer/Pods-MarsSTNServer.debug.xcconfig"; sourceTree = "<group>"; };
+		DA0538ABF967E2209DD04D5D /* Pods_MarsSTNServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarsSTNServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB70A3C64F9FEC5BD7397F11 /* Pods-MarsSTNServer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarsSTNServer.release.xcconfig"; path = "Target Support Files/Pods-MarsSTNServer/Pods-MarsSTNServer.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C44133D2927378A00677767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4AB7B9870CD5F0DE32B27314 /* Pods_MarsSTNServer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C4413372927378A00677767 = {
+			isa = PBXGroup;
+			children = (
+				3C4413422927378A00677767 /* MarsSTNServer */,
+				3C4413412927378A00677767 /* Products */,
+				474732CC0FFFA9902A9B9554 /* Pods */,
+				82F32F17B0B0A1C98ACA3335 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3C4413412927378A00677767 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C4413402927378A00677767 /* MarsSTNServer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C4413422927378A00677767 /* MarsSTNServer */ = {
+			isa = PBXGroup;
+			children = (
+				3C4413432927378A00677767 /* AppDelegate.h */,
+				3C4413442927378A00677767 /* AppDelegate.m */,
+				3C4413462927378A00677767 /* ViewController.h */,
+				3C4413472927378A00677767 /* ViewController.m */,
+				3C57AA55292A1D5D0096BB4B /* NetMsgXpHeader.h */,
+				3C441357292741FE00677767 /* KKTransportPacket.h */,
+				3C441356292741FE00677767 /* KKTransportPacketType.h */,
+				3C4413492927378C00677767 /* Assets.xcassets */,
+				3C44134B2927378C00677767 /* Main.storyboard */,
+				3C44134E2927378C00677767 /* main.m */,
+				3C4413502927378C00677767 /* MarsSTNServer.entitlements */,
+			);
+			path = MarsSTNServer;
+			sourceTree = "<group>";
+		};
+		474732CC0FFFA9902A9B9554 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67BF28C366E1FC5B60B8825F /* Pods-MarsSTNServer.debug.xcconfig */,
+				DB70A3C64F9FEC5BD7397F11 /* Pods-MarsSTNServer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		82F32F17B0B0A1C98ACA3335 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA0538ABF967E2209DD04D5D /* Pods_MarsSTNServer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C44133F2927378A00677767 /* MarsSTNServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C4413532927378C00677767 /* Build configuration list for PBXNativeTarget "MarsSTNServer" */;
+			buildPhases = (
+				E2CC4175C2D3D0D404BB5ABD /* [CP] Check Pods Manifest.lock */,
+				3C44133C2927378A00677767 /* Sources */,
+				3C44133D2927378A00677767 /* Frameworks */,
+				3C44133E2927378A00677767 /* Resources */,
+				3BE3EEF4EDB468FC48428C49 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarsSTNServer;
+			productName = MarsSTNServer;
+			productReference = 3C4413402927378A00677767 /* MarsSTNServer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C4413382927378A00677767 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					3C44133F2927378A00677767 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 3C44133B2927378A00677767 /* Build configuration list for PBXProject "MarsSTNServer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3C4413372927378A00677767;
+			productRefGroup = 3C4413412927378A00677767 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C44133F2927378A00677767 /* MarsSTNServer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C44133E2927378A00677767 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C44134A2927378C00677767 /* Assets.xcassets in Resources */,
+				3C44134D2927378C00677767 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3BE3EEF4EDB468FC48428C49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarsSTNServer/Pods-MarsSTNServer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MarsSTNServer/Pods-MarsSTNServer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MarsSTNServer/Pods-MarsSTNServer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2CC4175C2D3D0D404BB5ABD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MarsSTNServer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C44133C2927378A00677767 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C4413482927378A00677767 /* ViewController.m in Sources */,
+				3C44134F2927378C00677767 /* main.m in Sources */,
+				3C4413452927378A00677767 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3C44134B2927378C00677767 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C44134C2927378C00677767 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3C4413512927378C00677767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3C4413522927378C00677767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3C4413542927378C00677767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67BF28C366E1FC5B60B8825F /* Pods-MarsSTNServer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MarsSTNServer/MarsSTNServer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.MarsSTNServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		3C4413552927378C00677767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB70A3C64F9FEC5BD7397F11 /* Pods-MarsSTNServer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MarsSTNServer/MarsSTNServer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.MarsSTNServer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C44133B2927378A00677767 /* Build configuration list for PBXProject "MarsSTNServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C4413512927378C00677767 /* Debug */,
+				3C4413522927378C00677767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C4413532927378C00677767 /* Build configuration list for PBXNativeTarget "MarsSTNServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C4413542927378C00677767 /* Debug */,
+				3C4413552927378C00677767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C4413382927378A00677767 /* Project object */;
+}

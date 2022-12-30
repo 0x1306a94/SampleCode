@@ -1,0 +1,455 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C01147D2928898D00A23805 /* STNAuthTask.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3C01147C2928898D00A23805 /* STNAuthTask.mm */; };
+		3C01148029288CAC00A23805 /* STNTask.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3C01147F29288CAC00A23805 /* STNTask.mm */; };
+		3C44120C292716DA00677767 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC98E2529261B2E008B082F /* libresolv.tbd */; };
+		3C44120F292718CF00677767 /* shortlink_packer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3C44120D292718CF00677767 /* shortlink_packer.cpp */; };
+		3C44121129271A4100677767 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C44121029271A4100677767 /* CoreTelephony.framework */; };
+		3C44121329271A8800677767 /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C44121229271A8800677767 /* CoreWLAN.framework */; };
+		3C44121729271AE700677767 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C44121529271AD400677767 /* libz.tbd */; };
+		3C44121A29271B5700677767 /* app_callback.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3C44121829271B5700677767 /* app_callback.mm */; };
+		3C44121D29271CF700677767 /* NetworkStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C44121B29271CF700677767 /* NetworkStatus.m */; };
+		3CC98E0529261248008B082F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CC98E0429261248008B082F /* AppDelegate.mm */; };
+		3CC98E0829261248008B082F /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CC98E0729261248008B082F /* ViewController.mm */; };
+		3CC98E0A29261249008B082F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CC98E0929261249008B082F /* Assets.xcassets */; };
+		3CC98E0D29261249008B082F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CC98E0B29261249008B082F /* Main.storyboard */; };
+		3CC98E0F29261249008B082F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CC98E0E29261249008B082F /* main.m */; };
+		3CC98E1A29261278008B082F /* NetworkService.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CC98E1929261278008B082F /* NetworkService.mm */; };
+		3CC98E1D29261389008B082F /* stn_callback.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3CC98E1B29261389008B082F /* stn_callback.mm */; };
+		3CC98E2029261722008B082F /* longlink_packer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3CC98E1E29261722008B082F /* longlink_packer.cpp */; };
+		3CC98E2329261B1D008B082F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC98E2229261B1D008B082F /* SystemConfiguration.framework */; };
+		3CEDBF50292B1108009C8B65 /* mars.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEDBF4F292B1108009C8B65 /* mars.xcframework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3C01147B2928898D00A23805 /* STNAuthTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STNAuthTask.h; sourceTree = "<group>"; };
+		3C01147C2928898D00A23805 /* STNAuthTask.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = STNAuthTask.mm; sourceTree = "<group>"; };
+		3C01147E29288CAC00A23805 /* STNTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STNTask.h; sourceTree = "<group>"; };
+		3C01147F29288CAC00A23805 /* STNTask.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = STNTask.mm; sourceTree = "<group>"; };
+		3C44120D292718CF00677767 /* shortlink_packer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = shortlink_packer.cpp; sourceTree = "<group>"; };
+		3C44120E292718CF00677767 /* shortlink_packer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = shortlink_packer.hpp; sourceTree = "<group>"; };
+		3C44121029271A4100677767 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		3C44121229271A8800677767 /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = System/Library/Frameworks/CoreWLAN.framework; sourceTree = SDKROOT; };
+		3C44121429271ACC00677767 /* libdz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libdz.tbd; path = usr/lib/libdz.tbd; sourceTree = SDKROOT; };
+		3C44121529271AD400677767 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		3C44121629271ADC00677767 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		3C44121829271B5700677767 /* app_callback.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = app_callback.mm; sourceTree = "<group>"; };
+		3C44121929271B5700677767 /* app_callback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = app_callback.h; sourceTree = "<group>"; };
+		3C44121B29271CF700677767 /* NetworkStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkStatus.m; sourceTree = "<group>"; };
+		3C44121C29271CF700677767 /* NetworkStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkStatus.h; sourceTree = "<group>"; };
+		3CC4F1BF295EB75700AD2B43 /* proto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = proto.h; sourceTree = "<group>"; };
+		3CC98E0029261248008B082F /* MarsSTNSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarsSTNSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CC98E0329261248008B082F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3CC98E0429261248008B082F /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
+		3CC98E0629261248008B082F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3CC98E0729261248008B082F /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		3CC98E0929261249008B082F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3CC98E0C29261249008B082F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3CC98E0E29261249008B082F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3CC98E1029261249008B082F /* MarsSTNSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MarsSTNSample.entitlements; sourceTree = "<group>"; };
+		3CC98E1829261278008B082F /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
+		3CC98E1929261278008B082F /* NetworkService.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NetworkService.mm; sourceTree = "<group>"; };
+		3CC98E1B29261389008B082F /* stn_callback.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = stn_callback.mm; sourceTree = "<group>"; };
+		3CC98E1C29261389008B082F /* stn_callback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stn_callback.h; sourceTree = "<group>"; };
+		3CC98E1E29261722008B082F /* longlink_packer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = longlink_packer.cpp; sourceTree = "<group>"; };
+		3CC98E1F29261722008B082F /* longlink_packer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = longlink_packer.hpp; sourceTree = "<group>"; };
+		3CC98E2229261B1D008B082F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3CC98E2429261B24008B082F /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		3CC98E2529261B2E008B082F /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		3CEDBF4F292B1108009C8B65 /* mars.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mars.xcframework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3CC98DFD29261248008B082F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C44121129271A4100677767 /* CoreTelephony.framework in Frameworks */,
+				3C44121729271AE700677767 /* libz.tbd in Frameworks */,
+				3CC98E2329261B1D008B082F /* SystemConfiguration.framework in Frameworks */,
+				3C44121329271A8800677767 /* CoreWLAN.framework in Frameworks */,
+				3CEDBF50292B1108009C8B65 /* mars.xcframework in Frameworks */,
+				3C44120C292716DA00677767 /* libresolv.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C44121E29271F3E00677767 /* PublicComponentV2 */ = {
+			isa = PBXGroup;
+			children = (
+				3CC98E1B29261389008B082F /* stn_callback.mm */,
+				3CC98E1C29261389008B082F /* stn_callback.h */,
+				3C44121829271B5700677767 /* app_callback.mm */,
+				3C44121929271B5700677767 /* app_callback.h */,
+				3CC98E1E29261722008B082F /* longlink_packer.cpp */,
+				3CC98E1F29261722008B082F /* longlink_packer.hpp */,
+				3C44120D292718CF00677767 /* shortlink_packer.cpp */,
+				3C44120E292718CF00677767 /* shortlink_packer.hpp */,
+				3CC4F1BF295EB75700AD2B43 /* proto.h */,
+			);
+			path = PublicComponentV2;
+			sourceTree = "<group>";
+		};
+		3C44121F29271F4900677767 /* Bussiness */ = {
+			isa = PBXGroup;
+			children = (
+				3C44121C29271CF700677767 /* NetworkStatus.h */,
+				3C44121B29271CF700677767 /* NetworkStatus.m */,
+				3CC98E1829261278008B082F /* NetworkService.h */,
+				3CC98E1929261278008B082F /* NetworkService.mm */,
+				3C01147E29288CAC00A23805 /* STNTask.h */,
+				3C01147F29288CAC00A23805 /* STNTask.mm */,
+				3C01147B2928898D00A23805 /* STNAuthTask.h */,
+				3C01147C2928898D00A23805 /* STNAuthTask.mm */,
+			);
+			path = Bussiness;
+			sourceTree = "<group>";
+		};
+		3CC98DF729261248008B082F = {
+			isa = PBXGroup;
+			children = (
+				3CEDBF4F292B1108009C8B65 /* mars.xcframework */,
+				3CC98E0229261248008B082F /* MarsSTNSample */,
+				3CC98E0129261248008B082F /* Products */,
+				3CC98E2129261B1D008B082F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3CC98E0129261248008B082F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3CC98E0029261248008B082F /* MarsSTNSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3CC98E0229261248008B082F /* MarsSTNSample */ = {
+			isa = PBXGroup;
+			children = (
+				3CC98E0329261248008B082F /* AppDelegate.h */,
+				3CC98E0429261248008B082F /* AppDelegate.mm */,
+				3CC98E0629261248008B082F /* ViewController.h */,
+				3CC98E0729261248008B082F /* ViewController.mm */,
+				3C44121F29271F4900677767 /* Bussiness */,
+				3C44121E29271F3E00677767 /* PublicComponentV2 */,
+				3CC98E0929261249008B082F /* Assets.xcassets */,
+				3CC98E0B29261249008B082F /* Main.storyboard */,
+				3CC98E0E29261249008B082F /* main.m */,
+				3CC98E1029261249008B082F /* MarsSTNSample.entitlements */,
+			);
+			path = MarsSTNSample;
+			sourceTree = "<group>";
+		};
+		3CC98E2129261B1D008B082F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C44121629271ADC00677767 /* libz.1.tbd */,
+				3C44121529271AD400677767 /* libz.tbd */,
+				3C44121429271ACC00677767 /* libdz.tbd */,
+				3C44121229271A8800677767 /* CoreWLAN.framework */,
+				3C44121029271A4100677767 /* CoreTelephony.framework */,
+				3CC98E2529261B2E008B082F /* libresolv.tbd */,
+				3CC98E2429261B24008B082F /* libresolv.9.tbd */,
+				3CC98E2229261B1D008B082F /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3CC98DFF29261248008B082F /* MarsSTNSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CC98E1329261249008B082F /* Build configuration list for PBXNativeTarget "MarsSTNSample" */;
+			buildPhases = (
+				3CC98DFC29261248008B082F /* Sources */,
+				3CC98DFD29261248008B082F /* Frameworks */,
+				3CC98DFE29261248008B082F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MarsSTNSample;
+			productName = MarsSTNSample;
+			productReference = 3CC98E0029261248008B082F /* MarsSTNSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3CC98DF829261248008B082F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					3CC98DFF29261248008B082F = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 3CC98DFB29261248008B082F /* Build configuration list for PBXProject "MarsSTNSample" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3CC98DF729261248008B082F;
+			productRefGroup = 3CC98E0129261248008B082F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3CC98DFF29261248008B082F /* MarsSTNSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3CC98DFE29261248008B082F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CC98E0A29261249008B082F /* Assets.xcassets in Resources */,
+				3CC98E0D29261249008B082F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3CC98DFC29261248008B082F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CC98E1D29261389008B082F /* stn_callback.mm in Sources */,
+				3CC98E2029261722008B082F /* longlink_packer.cpp in Sources */,
+				3CC98E0829261248008B082F /* ViewController.mm in Sources */,
+				3CC98E0F29261249008B082F /* main.m in Sources */,
+				3C01147D2928898D00A23805 /* STNAuthTask.mm in Sources */,
+				3CC98E0529261248008B082F /* AppDelegate.mm in Sources */,
+				3C44121D29271CF700677767 /* NetworkStatus.m in Sources */,
+				3CC98E1A29261278008B082F /* NetworkService.mm in Sources */,
+				3C44121A29271B5700677767 /* app_callback.mm in Sources */,
+				3C44120F292718CF00677767 /* shortlink_packer.cpp in Sources */,
+				3C01148029288CAC00A23805 /* STNTask.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3CC98E0B29261249008B082F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3CC98E0C29261249008B082F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3CC98E1129261249008B082F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3CC98E1229261249008B082F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3CC98E1429261249008B082F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MarsSTNSample/MarsSTNSample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.MarsSTNSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		3CC98E1529261249008B082F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MarsSTNSample/MarsSTNSample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_USER_SELECTED_FILES = readwrite;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.MarsSTNSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3CC98DFB29261248008B082F /* Build configuration list for PBXProject "MarsSTNSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CC98E1129261249008B082F /* Debug */,
+				3CC98E1229261249008B082F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3CC98E1329261249008B082F /* Build configuration list for PBXNativeTarget "MarsSTNSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CC98E1429261249008B082F /* Debug */,
+				3CC98E1529261249008B082F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3CC98DF829261248008B082F /* Project object */;
+}
