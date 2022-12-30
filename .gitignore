@@ -86,3 +86,5 @@ iOSInjectionProject/
 ### Objective-C Patch ###
 
 # End of https://www.gitignore.io/api/objective-c,macos
+
+MarsSTN/MarsSTNSample/mars.xcframework
