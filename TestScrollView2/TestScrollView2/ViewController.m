@@ -7,9 +7,29 @@
 
 #import "ViewController.h"
 
+@interface CustomRichTextScrollView : UIScrollView
+@end
+
+@implementation CustomRichTextScrollView
+
+@end
+
+@interface CustomMainScrollView : UIScrollView
+@end
+
+@implementation CustomMainScrollView
+
+- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+    if (point.y < 0) {
+        return false;
+    }
+    return [super pointInside:point withEvent:event];
+}
+
+@end
 @interface ViewController () <UIScrollViewDelegate>
-@property (nonatomic, strong) UIScrollView *richTextScrollView;
-@property (nonatomic, strong) UIScrollView *listScrollView;
+@property (nonatomic, strong) CustomRichTextScrollView *richTextScrollView;
+@property (nonatomic, strong) CustomMainScrollView *listScrollView;
 @end
 
 @implementation ViewController
@@ -18,7 +38,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    UIScrollView *richTextScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    CustomRichTextScrollView *richTextScrollView = [[CustomRichTextScrollView alloc] initWithFrame:self.view.bounds];
+    richTextScrollView.scrollsToTop = NO;
+    richTextScrollView.showsVerticalScrollIndicator = NO;
     richTextScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     richTextScrollView.backgroundColor = UIColor.orangeColor;
     UIView *richTextItemView = [[UIView alloc] initWithFrame:self.view.bounds];
@@ -26,14 +48,15 @@
     [richTextScrollView addSubview:richTextItemView];
 
     self.richTextScrollView = richTextScrollView;
-    UIScrollView *listScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+
+    CustomMainScrollView *listScrollView = [[CustomMainScrollView alloc] initWithFrame:self.view.bounds];
+    //    listScrollView.scrollsToTop = NO;
     listScrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     listScrollView.backgroundColor = UIColor.clearColor;
 
     UIView *listItemView = [[UIView alloc] initWithFrame:self.view.bounds];
     listItemView.backgroundColor = UIColor.cyanColor;
     [listScrollView addSubview:listItemView];
-    listScrollView.delegate = self;
     self.listScrollView = listScrollView;
 
     [self.view addSubview:richTextScrollView];
@@ -47,14 +70,38 @@
     richTextScrollView.contentInset = UIEdgeInsetsMake(0, 0, listContentHeight, 0);
     listScrollView.contentInset = UIEdgeInsetsMake(richTextContentHeight, 0, 0, 0);
     listScrollView.contentOffset = CGPointMake(0, -richTextContentHeight);
+
+    [richTextScrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:NULL];
+    [listScrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
-// MARK: - UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat offset = scrollView.contentOffset.y;
+#define FLOAT_QE_ZERO(val) (((val) >= -FLT_EPSILON) && ((diff) <= FLT_EPSILON))
 
-    CGFloat fixOffset = offset + scrollView.contentInset.top;
-    NSLog(@"%f ~> %f", offset, fixOffset);
-    [self.richTextScrollView setContentOffset:CGPointMake(0, fixOffset) animated:NO];
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey, id> *)change context:(void *)context {
+    if (object == self.listScrollView) {
+        CGPoint contentOffset = [change[NSKeyValueChangeNewKey] CGPointValue];
+        CGFloat fixOffset = contentOffset.y + self.listScrollView.contentInset.top;
+        CGFloat old = self.richTextScrollView.contentOffset.y;
+        CGFloat diff = fabs(fixOffset - old);
+        //    NSLog(@"%f ~> %f", offset, fixOffset);
+        if (!FLOAT_QE_ZERO(diff)) {
+            [self.richTextScrollView setContentOffset:CGPointMake(0, fixOffset) animated:NO];
+        }
+
+        return;
+    }
+
+    if (object == self.richTextScrollView) {
+        CGPoint contentOffset = [change[NSKeyValueChangeNewKey] CGPointValue];
+        CGFloat fixOffset = contentOffset.y + (-self.listScrollView.contentInset.top);
+        //        NSLog(@"%f ~> %f", offset, fixOffset);
+        CGFloat old = self.listScrollView.contentOffset.y;
+        CGFloat diff = fabs(fixOffset - old);
+        if (!FLOAT_QE_ZERO(diff)) {
+            [self.listScrollView setContentOffset:CGPointMake(0, fixOffset) animated:NO];
+        }
+        return;
+    }
 }
+
 @end
