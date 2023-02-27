@@ -75,7 +75,8 @@
     [listScrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:NULL];
 }
 
-#define FLOAT_QE_ZERO(val) (((val) >= -FLT_EPSILON) && ((diff) <= FLT_EPSILON))
+// 这里epsilon 不能用 DBL_EPSILON
+#define __FLOAT_EQ_ZERO__(val) (((val) >= -FLT_EPSILON) && ((val) <= FLT_EPSILON))
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey, id> *)change context:(void *)context {
     if (object == self.listScrollView) {
@@ -84,7 +85,7 @@
         CGFloat old = self.richTextScrollView.contentOffset.y;
         CGFloat diff = fabs(fixOffset - old);
         //    NSLog(@"%f ~> %f", offset, fixOffset);
-        if (!FLOAT_QE_ZERO(diff)) {
+        if (!__FLOAT_EQ_ZERO__(diff)) {
             [self.richTextScrollView setContentOffset:CGPointMake(0, fixOffset) animated:NO];
         }
 
@@ -97,11 +98,11 @@
         //        NSLog(@"%f ~> %f", offset, fixOffset);
         CGFloat old = self.listScrollView.contentOffset.y;
         CGFloat diff = fabs(fixOffset - old);
-        if (!FLOAT_QE_ZERO(diff)) {
+        if (!__FLOAT_EQ_ZERO__(diff)) {
             [self.listScrollView setContentOffset:CGPointMake(0, fixOffset) animated:NO];
         }
         return;
     }
 }
-
+#undef __CGFLOAT_EQ_ZERO__
 @end
