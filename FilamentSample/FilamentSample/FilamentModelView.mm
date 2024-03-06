@@ -13,32 +13,32 @@
 
 #import <Foundation/Foundation.h>
 
-#include <filament/Camera.h>
-#include <filament/Color.h>
-#include <filament/Engine.h>
-#include <filament/IndirectLight.h>
-#include <filament/LightManager.h>
-#include <filament/RenderableManager.h>
-#include <filament/Renderer.h>
-#include <filament/Scene.h>
-#include <filament/Skybox.h>
-#include <filament/SwapChain.h>
-#include <filament/TransformManager.h>
-#include <filament/View.h>
-#include <filament/Viewport.h>
+#import <filament/Camera.h>
+#import <filament/Color.h>
+#import <filament/Engine.h>
+#import <filament/IndirectLight.h>
+#import <filament/LightManager.h>
+#import <filament/RenderableManager.h>
+#import <filament/Renderer.h>
+#import <filament/Scene.h>
+#import <filament/Skybox.h>
+#import <filament/SwapChain.h>
+#import <filament/TransformManager.h>
+#import <filament/View.h>
+#import <filament/Viewport.h>
 
-#include <gltfio/Animator.h>
-#include <gltfio/AssetLoader.h>
-#include <gltfio/ResourceLoader.h>
-#include <gltfio/TextureProvider.h>
-#include <gltfio/materials/uberarchive.h>
+#import <gltfio/Animator.h>
+#import <gltfio/AssetLoader.h>
+#import <gltfio/ResourceLoader.h>
+#import <gltfio/TextureProvider.h>
+#import <gltfio/materials/uberarchive.h>
 
-#include <ktxreader/Ktx1Reader.h>
+#import <ktxreader/Ktx1Reader.h>
 
-#include <utils/EntityManager.h>
-#include <utils/NameComponentManager.h>
+#import <utils/EntityManager.h>
+#import <utils/NameComponentManager.h>
 
-#include <camutils/Manipulator.h>
+#import <camutils/Manipulator.h>
 
 using namespace filament;
 using namespace utils;
@@ -257,7 +257,7 @@ const float kSensitivity = 100.0f;
 
     _scene->addEntities(_asset->getEntities(), _asset->getEntityCount());
     _resourceLoader->loadResources(_asset);
-    _animator = _asset->getAnimator();
+    _animator = _asset->getInstance()->getAnimator();
     _asset->releaseSourceData();
 
     [self startDisplayLink];
@@ -285,7 +285,7 @@ const float kSensitivity = 100.0f;
     }
 
     _resourceLoader->loadResources(_asset);
-    _animator = _asset->getAnimator();
+    _animator = _asset->getInstance()->getAnimator();
     _asset->releaseSourceData();
 
     _scene->addEntities(_asset->getEntities(), _asset->getEntityCount());
@@ -484,4 +484,3 @@ const float kSensitivity = 100.0f;
     _engine->destroy(&_engine);
 }
 @end
-

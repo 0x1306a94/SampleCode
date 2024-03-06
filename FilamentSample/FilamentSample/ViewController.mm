@@ -55,7 +55,7 @@
     NSData *buffer = [NSData dataWithContentsOfFile:path];
     [self.modelView loadModelGlb:buffer];
 #else
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"cup"
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"glass"
                                                      ofType:@"gltf"
                                                 inDirectory:@"BusterDrone"];
     assert(path.length > 0);

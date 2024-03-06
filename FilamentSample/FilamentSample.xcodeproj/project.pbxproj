@@ -15,8 +15,6 @@
 		3C85872128E1738F00C12FBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C85871F28E1738F00C12FBA /* LaunchScreen.storyboard */; };
 		3C85872428E1738F00C12FBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C85872328E1738F00C12FBA /* main.m */; };
 		3C85872C28E174BF00C12FBA /* FilamentModelView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3C85872B28E174BF00C12FBA /* FilamentModelView.mm */; };
-		3C85875628E17E0500C12FBA /* scene.gltf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C85874628E17CF200C12FBA /* scene.gltf */; };
-		3C85875728E17E0500C12FBA /* scene.bin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C85874728E17CF200C12FBA /* scene.bin */; };
 		3C85876328E17E8600C12FBA /* Boden_baseColor.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C85873B28E17CF100C12FBA /* Boden_baseColor.jpg */; };
 		3C85876428E17E8600C12FBA /* material_baseColor.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C85873C28E17CF100C12FBA /* material_baseColor.jpg */; };
 		3C85876528E17E8600C12FBA /* Boden_metallicRoughness.jpg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C85873D28E17CF100C12FBA /* Boden_metallicRoughness.jpg */; };
@@ -30,8 +28,12 @@
 		3C85884128E180F800C12FBA /* default_env_skybox_tiny.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 3C85883F28E180F800C12FBA /* default_env_skybox_tiny.ktx */; };
 		3C85884228E180F800C12FBA /* default_env_skybox.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 3C85884028E180F800C12FBA /* default_env_skybox.ktx */; };
 		3C85884428E1810A00C12FBA /* default_env_ibl.ktx in Resources */ = {isa = PBXBuildFile; fileRef = 3C85884328E1810A00C12FBA /* default_env_ibl.ktx */; };
-		3C85884928E1853D00C12FBA /* cup.bin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C85884528E1851D00C12FBA /* cup.bin */; };
-		3C85884A28E1853D00C12FBA /* cup.gltf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C85884628E1851D00C12FBA /* cup.gltf */; };
+		3CD7F4342B984CCF00079DCE /* cup.bin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C85884528E1851D00C12FBA /* cup.bin */; };
+		3CD7F4352B984CCF00079DCE /* cup.gltf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C85884628E1851D00C12FBA /* cup.gltf */; };
+		3CD7F4362B984CCF00079DCE /* scene.gltf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C85874628E17CF200C12FBA /* scene.gltf */; };
+		3CD7F4372B984CCF00079DCE /* scene.bin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C85874728E17CF200C12FBA /* scene.bin */; };
+		3CD7F43B2B984D6600079DCE /* glass.bin in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CD7F4392B984D5E00079DCE /* glass.bin */; };
+		3CD7F43C2B984D6700079DCE /* glass.gltf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3CD7F43A2B984D5E00079DCE /* glass.gltf */; };
 		B6194039E78C446D60AB504D /* Pods_FilamentSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C955BA37D25AC5FE8E78042A /* Pods_FilamentSample.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,10 +44,12 @@
 			dstPath = BusterDrone;
 			dstSubfolderSpec = 7;
 			files = (
-				3C85884928E1853D00C12FBA /* cup.bin in CopyFiles */,
-				3C85884A28E1853D00C12FBA /* cup.gltf in CopyFiles */,
-				3C85875628E17E0500C12FBA /* scene.gltf in CopyFiles */,
-				3C85875728E17E0500C12FBA /* scene.bin in CopyFiles */,
+				3CD7F43B2B984D6600079DCE /* glass.bin in CopyFiles */,
+				3CD7F43C2B984D6700079DCE /* glass.gltf in CopyFiles */,
+				3CD7F4342B984CCF00079DCE /* cup.bin in CopyFiles */,
+				3CD7F4352B984CCF00079DCE /* cup.gltf in CopyFiles */,
+				3CD7F4362B984CCF00079DCE /* scene.gltf in CopyFiles */,
+				3CD7F4372B984CCF00079DCE /* scene.bin in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +108,8 @@
 		3C85884328E1810A00C12FBA /* default_env_ibl.ktx */ = {isa = PBXFileReference; lastKnownFileType = file; path = default_env_ibl.ktx; sourceTree = "<group>"; };
 		3C85884528E1851D00C12FBA /* cup.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = cup.bin; sourceTree = "<group>"; };
 		3C85884628E1851D00C12FBA /* cup.gltf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cup.gltf; sourceTree = "<group>"; };
+		3CD7F4392B984D5E00079DCE /* glass.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = glass.bin; sourceTree = "<group>"; };
+		3CD7F43A2B984D5E00079DCE /* glass.gltf */ = {isa = PBXFileReference; lastKnownFileType = text; path = glass.gltf; sourceTree = "<group>"; };
 		6AFB18D30567A61248740F64 /* Pods-FilamentSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilamentSample.debug.xcconfig"; path = "Target Support Files/Pods-FilamentSample/Pods-FilamentSample.debug.xcconfig"; sourceTree = "<group>"; };
 		ABCF2A292AF96D735FA39BE0 /* Pods-FilamentSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FilamentSample.release.xcconfig"; path = "Target Support Files/Pods-FilamentSample/Pods-FilamentSample.release.xcconfig"; sourceTree = "<group>"; };
 		C955BA37D25AC5FE8E78042A /* Pods_FilamentSample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FilamentSample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +188,8 @@
 				3C85874528E17CF200C12FBA /* README */,
 				3C85874628E17CF200C12FBA /* scene.gltf */,
 				3C85874728E17CF200C12FBA /* scene.bin */,
+				3CD7F4392B984D5E00079DCE /* glass.bin */,
+				3CD7F43A2B984D5E00079DCE /* glass.gltf */,
 			);
 			path = BusterDrone;
 			sourceTree = "<group>";
