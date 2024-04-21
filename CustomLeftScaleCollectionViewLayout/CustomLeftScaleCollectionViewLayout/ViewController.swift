@@ -8,10 +8,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    lazy var layout: CustomCollectionViewLayout = {
+        let layout = CustomCollectionViewLayout()
+        return layout
+    }()
+    
     lazy var collectionView: UICollectionView = {
         let layout = CustomCollectionViewLayout()
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0)
+        let view = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+        // 右边多增加一点,应该是宽度放大时增加的两倍
+        let right = (self.layout.itemWidth * self.layout.maximumScale - self.layout.itemWidth) * 2.0
+        view.contentInset = UIEdgeInsets(top: 0, left: self.layout.spacing, bottom: 0, right: right)
         view.contentInsetAdjustmentBehavior = .never
         view.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         view.clipsToBounds = false
@@ -19,66 +26,85 @@ class ViewController: UIViewController {
         return view
     }()
     
+    var dataCount = 0
+    /// 尽量多一点
+    let amplification = 30
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(collectionView)
+        self.collectionView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.collectionView)
         
         NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 50),
-            collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
-            collectionView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 120),
+            self.collectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0),
+            self.collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
+            self.collectionView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.collectionView.heightAnchor.constraint(equalToConstant: 120),
         ])
         
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.dataCount = 20
+        self.collectionView.reloadData()
+        self.collectionView.layoutIfNeeded()
+        let item = CGFloat(self.dataCount * (self.amplification >> 1))
+        let targetContentOffsetX = item * self.layout.itemWidth + item * self.layout.spacing - self.collectionView.contentInset.left
+        self.collectionView.setContentOffset(CGPointMake(targetContentOffsetX, 0), animated: false)
     }
 }
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        20
+        self.dataCount * self.amplification
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
-        cell.indexLabel.text = "\(indexPath.item)"
+        cell.indexLabel.text = "\(indexPath.item / self.dataCount) - \(indexPath.item % self.dataCount)"
         return cell
     }
 }
 
 extension ViewController: UICollectionViewDelegate {
-//    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-//        let collectionViewLayout = collectionView.collectionViewLayout
-//
-//        let visibleRect = CGRect(origin: targetContentOffset.pointee, size: collectionView.bounds.size)
-//        guard let layoutAttributesForVisibleCells = collectionViewLayout.layoutAttributesForElements(in: visibleRect) else {
-//            return
-//        }
-//
-//        let contentOffsetX: CGFloat = collectionView.contentOffset.x
-//        var minX = CGFloat.greatestFiniteMagnitude
-//        var target: UICollectionViewLayoutAttributes? = nil
-//        for attributes in layoutAttributesForVisibleCells {
-//            let xPosition = attributes.frame.minX - contentOffsetX
-//            print(attributes.indexPath.item, xPosition)
-//            if abs(xPosition) < minX {
-//                minX = abs(xPosition)
-//                target = attributes
-//            }
-//        }
-//
-//        guard let target = target else {
-//            return
-//        }
-//
-//        let targetContentOffsetX = target.frame.minX - collectionView.contentInset.left
-//
-//        targetContentOffset.pointee.x = targetContentOffsetX
-//    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            self.scrollViewDidCompleteStop(scrollView)
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        self.scrollViewDidCompleteStop(scrollView)
+    }
+    
+    func scrollViewDidCompleteStop(_ scrollView: UIScrollView) {
+        guard self.dataCount > 0, let layout = self.collectionView.collectionViewLayout as? CustomCollectionViewLayout else {
+            return
+        }
+        
+        var visibleRect = CGRect(origin: self.collectionView.contentOffset, size: self.collectionView.bounds.size)
+        visibleRect = visibleRect.insetBy(dx: -layout.itemWidth, dy: 0)
+        guard let target = layout.findAdsorbLayoutAttribute(in: visibleRect) else {
+            return
+        }
+        
+        let realIndex = target.indexPath.item % self.dataCount
+        let page = target.indexPath.item / self.dataCount
+        let range = 4 ..< (self.amplification - 4)
+        if range.contains(page) {
+            return
+        }
+        
+        print("reset")
+        let item = CGFloat(self.dataCount * (self.amplification >> 1) + realIndex)
+        let targetContentOffsetX = item * layout.itemWidth + item * layout.spacing - self.collectionView.contentInset.left
+        self.collectionView.setContentOffset(CGPointMake(targetContentOffsetX, 0), animated: false)
+    }
 }
 
 class CustomCollectionViewCell: UICollectionViewCell {
@@ -109,17 +135,18 @@ class CustomCollectionViewCell: UICollectionViewCell {
 }
 
 class CustomCollectionViewLayout: UICollectionViewLayout {
-    private let spacing: CGFloat = 10
-    private let itemWidth: CGFloat = 100
-    private var layoutAttributes = [UICollectionViewLayoutAttributes]()
+    public var spacing: CGFloat = 10
+    public var itemWidth: CGFloat = 100
     
-    private let maximumScale: CGFloat = 1.4
-    private let minimumScale: CGFloat = 1.0
+    public var maximumScale: CGFloat = 1.4
+    public var minimumScale: CGFloat = 1.0
+    
     private var contentWidth: CGFloat = 0
+    private var layoutAttributes = [UICollectionViewLayoutAttributes]()
     
     override var collectionViewContentSize: CGSize {
         guard let collectionView = collectionView else { return CGSize.zero }
-        return CGSize(width: contentWidth, height: collectionView.bounds.height)
+        return CGSize(width: self.contentWidth, height: collectionView.bounds.height)
     }
         
     override func prepare() {
@@ -127,7 +154,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             
         guard let collectionView = collectionView else { return }
             
-        layoutAttributes.removeAll()
+        self.layoutAttributes.removeAll()
         
         let itemHeight = collectionView.frame.height
         let contentInset = collectionView.contentInset
@@ -135,7 +162,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         let itemCount = collectionView.numberOfItems(inSection: 0)
         let contentOffsetX = collectionView.contentOffset.x
             
-        let length = itemWidth + spacing
+        let length = self.itemWidth + self.spacing
         
         let scaleIncrement = (self.maximumScale - self.minimumScale) / length
         
@@ -145,7 +172,8 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             let indexPath = IndexPath(item: item, section: 0)
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
                 
-            var originFrame = CGRect(x: CGFloat(item) * itemWidth + CGFloat(item) * spacing, y: 0, width: itemWidth, height: itemHeight)
+            var originFrame = CGRect(x: CGFloat(item) * self.itemWidth + CGFloat(item) * self.spacing, y: 0, width: self.itemWidth, height: itemHeight)
+            self.contentWidth = originFrame.maxX
             
             let xPosition = originFrame.minX - contentOffsetX - contentInset.left
             var scale: CGFloat = 1.0
@@ -157,21 +185,19 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             }
 //            print(item, xPosition, scale)
 
-            originFrame.size.width = itemWidth * scale
+            originFrame.size.width = self.itemWidth * scale
             originFrame.size.height = itemHeight * scale
             originFrame.origin.y = itemHeight - originFrame.height
-            originFrame.origin.x = prev.maxX + spacing
+            originFrame.origin.x = prev.maxX + self.spacing
             attributes.frame = originFrame
             prev = originFrame
             
-            layoutAttributes.append(attributes)
+            self.layoutAttributes.append(attributes)
         }
-        
-        contentWidth = prev.maxX
     }
         
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return layoutAttributes.filter { $0.frame.intersects(rect) }
+        return self.layoutAttributes.filter { $0.frame.intersects(rect) }
     }
         
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
@@ -184,29 +210,37 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         }
 
         var visibleRect = CGRect(origin: proposedContentOffset, size: collectionView.bounds.size)
-        visibleRect = visibleRect.insetBy(dx: -itemWidth, dy: 0)
-        guard let layoutAttributesForVisibleCells = layoutAttributesForElements(in: visibleRect) else {
+        visibleRect = visibleRect.insetBy(dx: -self.itemWidth, dy: 0)
+        guard let target = self.findAdsorbLayoutAttribute(in: visibleRect) else {
             return super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
         }
-
+        
+        let item = CGFloat(target.indexPath.item)
+        let targetContentOffsetX = item * self.itemWidth + item * self.spacing - collectionView.contentInset.left
+        return CGPoint(x: targetContentOffsetX, y: proposedContentOffset.y)
+    }
+    
+    func findAdsorbLayoutAttribute(in rect: CGRect) -> UICollectionViewLayoutAttributes? {
+        guard let collectionView = collectionView else {
+            return nil
+        }
+        
+        guard let layoutAttributesForVisibleCells = self.layoutAttributesForElements(in: rect) else {
+            return nil
+        }
+        
         let contentOffsetX: CGFloat = collectionView.contentOffset.x
         var minX = CGFloat.greatestFiniteMagnitude
         var target: UICollectionViewLayoutAttributes? = nil
-        print("========")
+//        print("========")
         for attributes in layoutAttributesForVisibleCells {
             let xPosition = attributes.frame.minX - contentOffsetX
-            print(attributes.indexPath.item, xPosition)
             if abs(xPosition) < minX {
                 minX = abs(xPosition)
                 target = attributes
             }
         }
-
-        guard let target = target else {
-            return super.targetContentOffset(forProposedContentOffset: proposedContentOffset, withScrollingVelocity: velocity)
-        }
-
-        let targetContentOffsetX = target.frame.minX - collectionView.contentInset.left
-        return CGPoint(x: targetContentOffsetX, y: proposedContentOffset.y)
+        
+        return target
     }
 }
