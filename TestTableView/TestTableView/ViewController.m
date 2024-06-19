@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.bgView                 = [[UIView alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    self.bgView = [[UIView alloc] initWithFrame:UIScreen.mainScreen.bounds];
     self.bgView.backgroundColor = [UIColor.blackColor colorWithAlphaComponent:0.6];
     [self.view insertSubview:self.bgView atIndex:0];
 
@@ -34,4 +34,3 @@
 }
 
 @end
-
