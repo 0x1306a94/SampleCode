@@ -38,6 +38,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.contentInset = UIEdgeInsetsMake(30, 0, 0, 0);
+    self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"cell"];
 
     [self.view addSubview:self.containerView];
@@ -81,10 +82,10 @@
                 // 这段代码用于处理, tableView 已经往上滑动一部分后
                 // 从 headerView 区域 触发手势, 无法滑动 tableView
                 // 还有另一个功能就是,用于修正 tableView
-                contentOffset.y -= translation.y;
-                [pan setTranslation:CGPointZero inView:pan.view];
                 CGPoint min = [self minContentOffset];
                 CGPoint max = [self maxContentOffset];
+                contentOffset.y -= translation.y;
+                [pan setTranslation:CGPointZero inView:pan.view];
                 contentOffset.y = fmax(min.y, fmin(max.y, contentOffset.y));
                 NSLog(@"setContentOffset: %f", contentOffset.y);
                 [self.tableView setContentOffset:contentOffset animated:NO];
@@ -111,6 +112,12 @@
             } else {
                 [UIView animateWithDuration:0.6 delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionAllowUserInteraction animations:^{
                     self.containerView.transform = CGAffineTransformIdentity;
+                    CGPoint contentOffset = self.tableView.contentOffset;
+                    CGPoint min = [self minContentOffset];
+                    CGPoint max = [self maxContentOffset];
+                    contentOffset.y = fmax(min.y, fmin(max.y, contentOffset.y));
+                    NSLog(@"setContentOffset: %f", contentOffset.y);
+                    [self.tableView setContentOffset:contentOffset animated:NO];
                 } completion:^(BOOL finished){
 
                 }];
@@ -195,3 +202,4 @@
     }];
 }
 @end
+//
