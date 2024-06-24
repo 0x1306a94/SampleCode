@@ -1,0 +1,12 @@
+//
+//  Config.xcconfig
+//  VideoFullScreenSample
+//
+//  Created by king on 2024/6/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+USE_AUTOLAYOUT=1
+GCC_PREPROCESSOR_DEFINITIONS=$(inherited) USE_AUTOLAYOUT=$(USE_AUTOLAYOUT)
