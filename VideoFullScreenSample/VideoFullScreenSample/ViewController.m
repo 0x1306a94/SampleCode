@@ -11,6 +11,8 @@
 
 #import "KKPlayerLandscapeTransition.h"
 
+#import "KKSecondaryViewController.h"
+
 #import <Masonry/Masonry.h>
 
 @interface KKTransitionAnimationView : UIView
@@ -72,6 +74,11 @@
 
 - (void)buttonAction:(UIButton *)sender {
     KKPlayerLandscapeController *vc = [[KKPlayerLandscapeController alloc] initWithSourceView:self.containerView delegate:self];
+    vc.dismissHandler = ^{
+        NSLog(@"interfaceOrientation: %ld", self.view.window.windowScene.interfaceOrientation);
+        KKSecondaryViewController *secondaryVc = [KKSecondaryViewController new];
+        [self.navigationController pushViewController:secondaryVc animated:YES];
+    };
     [self presentViewController:vc animated:YES completion:^{
 
     }];

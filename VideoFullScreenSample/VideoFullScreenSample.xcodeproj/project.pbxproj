@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C237EB02FEE1E8400BFCE13 /* KKSecondaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C237EAF2FEE1E8400BFCE13 /* KKSecondaryViewController.m */; };
 		3C4D90582C298FF900FCB383 /* KKPlayerLandscapeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D90522C298FF900FCB383 /* KKPlayerLandscapeController.m */; };
 		3C4D90592C298FF900FCB383 /* KKPlayerLandscapeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D90542C298FF900FCB383 /* KKPlayerLandscapeTransition.m */; };
 		3C9F24642C24492B00294329 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F24632C24492B00294329 /* AppDelegate.m */; };
@@ -44,6 +45,8 @@
 /* Begin PBXFileReference section */
 		052F0F7D7F99E86B90DC2881 /* Pods-VideoFullScreenSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoFullScreenSample.debug.xcconfig"; path = "Target Support Files/Pods-VideoFullScreenSample/Pods-VideoFullScreenSample.debug.xcconfig"; sourceTree = "<group>"; };
 		2D1C76A713E4D85D052C7EA7 /* Pods_VideoFullScreenSampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoFullScreenSampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C237EAE2FEE1E8400BFCE13 /* KKSecondaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSecondaryViewController.h; sourceTree = "<group>"; };
+		3C237EAF2FEE1E8400BFCE13 /* KKSecondaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSecondaryViewController.m; sourceTree = "<group>"; };
 		3C4D90522C298FF900FCB383 /* KKPlayerLandscapeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPlayerLandscapeController.m; sourceTree = "<group>"; };
 		3C4D90532C298FF900FCB383 /* KKPlayerLandscapeControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPlayerLandscapeControllerDelegate.h; sourceTree = "<group>"; };
 		3C4D90542C298FF900FCB383 /* KKPlayerLandscapeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPlayerLandscapeTransition.m; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 				3C9F24662C24492B00294329 /* SceneDelegate.m */,
 				3C9F24682C24492B00294329 /* ViewController.h */,
 				3C9F24692C24492B00294329 /* ViewController.m */,
+				3C237EAE2FEE1E8400BFCE13 /* KKSecondaryViewController.h */,
+				3C237EAF2FEE1E8400BFCE13 /* KKSecondaryViewController.m */,
 				3C9F246B2C24492B00294329 /* Main.storyboard */,
 				3C9F246E2C24492C00294329 /* Assets.xcassets */,
 				3C9F24702C24492C00294329 /* LaunchScreen.storyboard */,
@@ -331,9 +336,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VideoFullScreenSample/Pods-VideoFullScreenSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VideoFullScreenSample/Pods-VideoFullScreenSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -392,9 +401,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VideoFullScreenSample-VideoFullScreenSampleUITests/Pods-VideoFullScreenSample-VideoFullScreenSampleUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VideoFullScreenSample-VideoFullScreenSampleUITests/Pods-VideoFullScreenSample-VideoFullScreenSampleUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -430,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C237EB02FEE1E8400BFCE13 /* KKSecondaryViewController.m in Sources */,
 				3C9F246A2C24492B00294329 /* ViewController.m in Sources */,
 				3C4D90592C298FF900FCB383 /* KKPlayerLandscapeTransition.m in Sources */,
 				3C9F24642C24492B00294329 /* AppDelegate.m in Sources */,
