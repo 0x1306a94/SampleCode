@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C237EB02FEE1E8400BFCE13 /* KKSecondaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C237EAF2FEE1E8400BFCE13 /* KKSecondaryViewController.m */; };
-		3C4D90582C298FF900FCB383 /* KKPlayerLandscapeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D90522C298FF900FCB383 /* KKPlayerLandscapeController.m */; };
-		3C4D90592C298FF900FCB383 /* KKPlayerLandscapeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4D90542C298FF900FCB383 /* KKPlayerLandscapeTransition.m */; };
-		3C9F24642C24492B00294329 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F24632C24492B00294329 /* AppDelegate.m */; };
-		3C9F24672C24492B00294329 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F24662C24492B00294329 /* SceneDelegate.m */; };
-		3C9F246A2C24492B00294329 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F24692C24492B00294329 /* ViewController.m */; };
-		3C9F246D2C24492B00294329 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3C9F246C2C24492B00294329 /* Base */; };
-		3C9F246F2C24492C00294329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C9F246E2C24492C00294329 /* Assets.xcassets */; };
-		3C9F24722C24492C00294329 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3C9F24712C24492C00294329 /* Base */; };
-		3C9F24752C24492C00294329 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F24742C24492C00294329 /* main.m */; };
-		3C9F247F2C24492C00294329 /* VideoFullScreenSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F247E2C24492C00294329 /* VideoFullScreenSampleTests.m */; };
-		3C9F24892C24492C00294329 /* VideoFullScreenSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F24882C24492C00294329 /* VideoFullScreenSampleUITests.m */; };
-		3C9F248B2C24492C00294329 /* VideoFullScreenSampleUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C9F248A2C24492C00294329 /* VideoFullScreenSampleUITestsLaunchTests.m */; };
+		4B91AA052FEF9D2200C49024 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91A9F02FEF9D2200C49024 /* AppDelegate.m */; };
+		4B91AA062FEF9D2200C49024 /* KKPlayerLandscapeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91A9F42FEF9D2200C49024 /* KKPlayerLandscapeController.m */; };
+		4B91AA072FEF9D2200C49024 /* KKPlayerLandscapeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91A9F82FEF9D2200C49024 /* KKPlayerLandscapeTransition.m */; };
+		4B91AA082FEF9D2200C49024 /* KKSecondaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91A9FA2FEF9D2200C49024 /* KKSecondaryViewController.m */; };
+		4B91AA092FEF9D2200C49024 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91A9FD2FEF9D2200C49024 /* main.m */; };
+		4B91AA0A2FEF9D2200C49024 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91AA012FEF9D2200C49024 /* SceneDelegate.m */; };
+		4B91AA0B2FEF9D2200C49024 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91AA032FEF9D2200C49024 /* ViewController.m */; };
+		4B91AA0C2FEF9D2200C49024 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B91A9F12FEF9D2200C49024 /* Assets.xcassets */; };
+		4B91AA0D2FEF9D2200C49024 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4B91A9FB2FEF9D2200C49024 /* Base */; };
+		4B91AA0E2FEF9D2200C49024 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4B91A9FE2FEF9D2200C49024 /* Base */; };
+		4B91AA112FEF9D2500C49024 /* VideoFullScreenSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91AA0F2FEF9D2500C49024 /* VideoFullScreenSampleTests.m */; };
+		4B91AA152FEF9D2800C49024 /* VideoFullScreenSampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91AA122FEF9D2800C49024 /* VideoFullScreenSampleUITests.m */; };
+		4B91AA162FEF9D2800C49024 /* VideoFullScreenSampleUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B91AA132FEF9D2800C49024 /* VideoFullScreenSampleUITestsLaunchTests.m */; };
 		68EF9E33FA422E254ED3889F /* Pods_VideoFullScreenSampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D1C76A713E4D85D052C7EA7 /* Pods_VideoFullScreenSampleTests.framework */; };
 		E1103CD03D1173E67F3BDBFD /* Pods_VideoFullScreenSample_VideoFullScreenSampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C468C16D2EF468DE7F4A989 /* Pods_VideoFullScreenSample_VideoFullScreenSampleUITests.framework */; };
 		F308A95F725478AD5F91A8A2 /* Pods_VideoFullScreenSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1217690250481DC569BB8C0 /* Pods_VideoFullScreenSample.framework */; };
@@ -45,32 +45,32 @@
 /* Begin PBXFileReference section */
 		052F0F7D7F99E86B90DC2881 /* Pods-VideoFullScreenSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoFullScreenSample.debug.xcconfig"; path = "Target Support Files/Pods-VideoFullScreenSample/Pods-VideoFullScreenSample.debug.xcconfig"; sourceTree = "<group>"; };
 		2D1C76A713E4D85D052C7EA7 /* Pods_VideoFullScreenSampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoFullScreenSampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C237EAE2FEE1E8400BFCE13 /* KKSecondaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSecondaryViewController.h; sourceTree = "<group>"; };
-		3C237EAF2FEE1E8400BFCE13 /* KKSecondaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSecondaryViewController.m; sourceTree = "<group>"; };
-		3C4D90522C298FF900FCB383 /* KKPlayerLandscapeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPlayerLandscapeController.m; sourceTree = "<group>"; };
-		3C4D90532C298FF900FCB383 /* KKPlayerLandscapeControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPlayerLandscapeControllerDelegate.h; sourceTree = "<group>"; };
-		3C4D90542C298FF900FCB383 /* KKPlayerLandscapeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKPlayerLandscapeTransition.m; sourceTree = "<group>"; };
-		3C4D90552C298FF900FCB383 /* KKPlayerLandscapeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPlayerLandscapeController.h; sourceTree = "<group>"; };
-		3C4D90562C298FF900FCB383 /* KKPlayerLandscapeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKPlayerLandscapeTransition.h; sourceTree = "<group>"; };
-		3C4D90572C298FF900FCB383 /* KKPlayerLandscapeController+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KKPlayerLandscapeController+Private.h"; sourceTree = "<group>"; };
 		3C4D905A2C29901700FCB383 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		3C9F245F2C24492B00294329 /* VideoFullScreenSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoFullScreenSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C9F24622C24492B00294329 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		3C9F24632C24492B00294329 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3C9F24652C24492B00294329 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		3C9F24662C24492B00294329 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		3C9F24682C24492B00294329 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3C9F24692C24492B00294329 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3C9F246C2C24492B00294329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3C9F246E2C24492C00294329 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3C9F24712C24492C00294329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3C9F24732C24492C00294329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C9F24742C24492C00294329 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3C9F247A2C24492C00294329 /* VideoFullScreenSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoFullScreenSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C9F247E2C24492C00294329 /* VideoFullScreenSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoFullScreenSampleTests.m; sourceTree = "<group>"; };
 		3C9F24842C24492C00294329 /* VideoFullScreenSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoFullScreenSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3C9F24882C24492C00294329 /* VideoFullScreenSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoFullScreenSampleUITests.m; sourceTree = "<group>"; };
-		3C9F248A2C24492C00294329 /* VideoFullScreenSampleUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoFullScreenSampleUITestsLaunchTests.m; sourceTree = "<group>"; };
+		4B91A9EF2FEF9D2200C49024 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4B91A9F02FEF9D2200C49024 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4B91A9F12FEF9D2200C49024 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4B91A9F22FEF9D2200C49024 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B91A9F32FEF9D2200C49024 /* KKPlayerLandscapeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKPlayerLandscapeController.h; sourceTree = "<group>"; };
+		4B91A9F42FEF9D2200C49024 /* KKPlayerLandscapeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKPlayerLandscapeController.m; sourceTree = "<group>"; };
+		4B91A9F52FEF9D2200C49024 /* KKPlayerLandscapeController+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KKPlayerLandscapeController+Private.h"; sourceTree = "<group>"; };
+		4B91A9F62FEF9D2200C49024 /* KKPlayerLandscapeControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKPlayerLandscapeControllerDelegate.h; sourceTree = "<group>"; };
+		4B91A9F72FEF9D2200C49024 /* KKPlayerLandscapeTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKPlayerLandscapeTransition.h; sourceTree = "<group>"; };
+		4B91A9F82FEF9D2200C49024 /* KKPlayerLandscapeTransition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKPlayerLandscapeTransition.m; sourceTree = "<group>"; };
+		4B91A9F92FEF9D2200C49024 /* KKSecondaryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKSecondaryViewController.h; sourceTree = "<group>"; };
+		4B91A9FA2FEF9D2200C49024 /* KKSecondaryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKSecondaryViewController.m; sourceTree = "<group>"; };
+		4B91A9FB2FEF9D2200C49024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4B91A9FD2FEF9D2200C49024 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4B91A9FE2FEF9D2200C49024 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B91AA002FEF9D2200C49024 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		4B91AA012FEF9D2200C49024 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		4B91AA022FEF9D2200C49024 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4B91AA032FEF9D2200C49024 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4B91AA0F2FEF9D2500C49024 /* VideoFullScreenSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoFullScreenSampleTests.m; sourceTree = "<group>"; };
+		4B91AA122FEF9D2800C49024 /* VideoFullScreenSampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoFullScreenSampleUITests.m; sourceTree = "<group>"; };
+		4B91AA132FEF9D2800C49024 /* VideoFullScreenSampleUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoFullScreenSampleUITestsLaunchTests.m; sourceTree = "<group>"; };
 		5F4C2BDD2908BA8207ACE654 /* Pods-VideoFullScreenSample-VideoFullScreenSampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoFullScreenSample-VideoFullScreenSampleUITests.release.xcconfig"; path = "Target Support Files/Pods-VideoFullScreenSample-VideoFullScreenSampleUITests/Pods-VideoFullScreenSample-VideoFullScreenSampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7C468C16D2EF468DE7F4A989 /* Pods_VideoFullScreenSample_VideoFullScreenSampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoFullScreenSample_VideoFullScreenSampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		979EA11EA3686B7E1C5CF8E5 /* Pods-VideoFullScreenSample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoFullScreenSample.release.xcconfig"; path = "Target Support Files/Pods-VideoFullScreenSample/Pods-VideoFullScreenSample.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,9 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				3C4D905A2C29901700FCB383 /* Config.xcconfig */,
-				3C9F24612C24492B00294329 /* VideoFullScreenSample */,
-				3C9F247D2C24492C00294329 /* VideoFullScreenSampleTests */,
-				3C9F24872C24492C00294329 /* VideoFullScreenSampleUITests */,
+				4B91AA042FEF9D2200C49024 /* VideoFullScreenSample */,
+				4B91AA102FEF9D2500C49024 /* VideoFullScreenSampleTests */,
+				4B91AA142FEF9D2800C49024 /* VideoFullScreenSampleUITests */,
 				3C9F24602C24492B00294329 /* Products */,
 				A7D84C7ABD01AA389B155272 /* Pods */,
 				F6334058AA3B48F94EA9048C /* Frameworks */,
@@ -131,45 +131,45 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3C9F24612C24492B00294329 /* VideoFullScreenSample */ = {
+		4B91AA042FEF9D2200C49024 /* VideoFullScreenSample */ = {
 			isa = PBXGroup;
 			children = (
-				3C4D90552C298FF900FCB383 /* KKPlayerLandscapeController.h */,
-				3C4D90522C298FF900FCB383 /* KKPlayerLandscapeController.m */,
-				3C4D90572C298FF900FCB383 /* KKPlayerLandscapeController+Private.h */,
-				3C4D90532C298FF900FCB383 /* KKPlayerLandscapeControllerDelegate.h */,
-				3C4D90562C298FF900FCB383 /* KKPlayerLandscapeTransition.h */,
-				3C4D90542C298FF900FCB383 /* KKPlayerLandscapeTransition.m */,
-				3C9F24622C24492B00294329 /* AppDelegate.h */,
-				3C9F24632C24492B00294329 /* AppDelegate.m */,
-				3C9F24652C24492B00294329 /* SceneDelegate.h */,
-				3C9F24662C24492B00294329 /* SceneDelegate.m */,
-				3C9F24682C24492B00294329 /* ViewController.h */,
-				3C9F24692C24492B00294329 /* ViewController.m */,
-				3C237EAE2FEE1E8400BFCE13 /* KKSecondaryViewController.h */,
-				3C237EAF2FEE1E8400BFCE13 /* KKSecondaryViewController.m */,
-				3C9F246B2C24492B00294329 /* Main.storyboard */,
-				3C9F246E2C24492C00294329 /* Assets.xcassets */,
-				3C9F24702C24492C00294329 /* LaunchScreen.storyboard */,
-				3C9F24732C24492C00294329 /* Info.plist */,
-				3C9F24742C24492C00294329 /* main.m */,
+				4B91A9EF2FEF9D2200C49024 /* AppDelegate.h */,
+				4B91A9F02FEF9D2200C49024 /* AppDelegate.m */,
+				4B91A9F12FEF9D2200C49024 /* Assets.xcassets */,
+				4B91A9F22FEF9D2200C49024 /* Info.plist */,
+				4B91A9F32FEF9D2200C49024 /* KKPlayerLandscapeController.h */,
+				4B91A9F42FEF9D2200C49024 /* KKPlayerLandscapeController.m */,
+				4B91A9F52FEF9D2200C49024 /* KKPlayerLandscapeController+Private.h */,
+				4B91A9F62FEF9D2200C49024 /* KKPlayerLandscapeControllerDelegate.h */,
+				4B91A9F72FEF9D2200C49024 /* KKPlayerLandscapeTransition.h */,
+				4B91A9F82FEF9D2200C49024 /* KKPlayerLandscapeTransition.m */,
+				4B91A9F92FEF9D2200C49024 /* KKSecondaryViewController.h */,
+				4B91A9FA2FEF9D2200C49024 /* KKSecondaryViewController.m */,
+				4B91A9FC2FEF9D2200C49024 /* LaunchScreen.storyboard */,
+				4B91A9FD2FEF9D2200C49024 /* main.m */,
+				4B91A9FF2FEF9D2200C49024 /* Main.storyboard */,
+				4B91AA002FEF9D2200C49024 /* SceneDelegate.h */,
+				4B91AA012FEF9D2200C49024 /* SceneDelegate.m */,
+				4B91AA022FEF9D2200C49024 /* ViewController.h */,
+				4B91AA032FEF9D2200C49024 /* ViewController.m */,
 			);
 			path = VideoFullScreenSample;
 			sourceTree = "<group>";
 		};
-		3C9F247D2C24492C00294329 /* VideoFullScreenSampleTests */ = {
+		4B91AA102FEF9D2500C49024 /* VideoFullScreenSampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				3C9F247E2C24492C00294329 /* VideoFullScreenSampleTests.m */,
+				4B91AA0F2FEF9D2500C49024 /* VideoFullScreenSampleTests.m */,
 			);
 			path = VideoFullScreenSampleTests;
 			sourceTree = "<group>";
 		};
-		3C9F24872C24492C00294329 /* VideoFullScreenSampleUITests */ = {
+		4B91AA142FEF9D2800C49024 /* VideoFullScreenSampleUITests */ = {
 			isa = PBXGroup;
 			children = (
-				3C9F24882C24492C00294329 /* VideoFullScreenSampleUITests.m */,
-				3C9F248A2C24492C00294329 /* VideoFullScreenSampleUITestsLaunchTests.m */,
+				4B91AA122FEF9D2800C49024 /* VideoFullScreenSampleUITests.m */,
+				4B91AA132FEF9D2800C49024 /* VideoFullScreenSampleUITestsLaunchTests.m */,
 			);
 			path = VideoFullScreenSampleUITests;
 			sourceTree = "<group>";
@@ -305,9 +305,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C9F246F2C24492C00294329 /* Assets.xcassets in Resources */,
-				3C9F24722C24492C00294329 /* Base in Resources */,
-				3C9F246D2C24492B00294329 /* Base in Resources */,
+				4B91AA0D2FEF9D2200C49024 /* Base in Resources */,
+				4B91AA0E2FEF9D2200C49024 /* Base in Resources */,
+				4B91AA0C2FEF9D2200C49024 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,9 +336,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VideoFullScreenSample/Pods-VideoFullScreenSample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VideoFullScreenSample/Pods-VideoFullScreenSample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -397,9 +401,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VideoFullScreenSample-VideoFullScreenSampleUITests/Pods-VideoFullScreenSample-VideoFullScreenSampleUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VideoFullScreenSample-VideoFullScreenSampleUITests/Pods-VideoFullScreenSample-VideoFullScreenSampleUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -435,13 +443,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C237EB02FEE1E8400BFCE13 /* KKSecondaryViewController.m in Sources */,
-				3C9F246A2C24492B00294329 /* ViewController.m in Sources */,
-				3C4D90592C298FF900FCB383 /* KKPlayerLandscapeTransition.m in Sources */,
-				3C9F24642C24492B00294329 /* AppDelegate.m in Sources */,
-				3C9F24752C24492C00294329 /* main.m in Sources */,
-				3C4D90582C298FF900FCB383 /* KKPlayerLandscapeController.m in Sources */,
-				3C9F24672C24492B00294329 /* SceneDelegate.m in Sources */,
+				4B91AA052FEF9D2200C49024 /* AppDelegate.m in Sources */,
+				4B91AA062FEF9D2200C49024 /* KKPlayerLandscapeController.m in Sources */,
+				4B91AA072FEF9D2200C49024 /* KKPlayerLandscapeTransition.m in Sources */,
+				4B91AA082FEF9D2200C49024 /* KKSecondaryViewController.m in Sources */,
+				4B91AA092FEF9D2200C49024 /* main.m in Sources */,
+				4B91AA0A2FEF9D2200C49024 /* SceneDelegate.m in Sources */,
+				4B91AA0B2FEF9D2200C49024 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C9F247F2C24492C00294329 /* VideoFullScreenSampleTests.m in Sources */,
+				4B91AA112FEF9D2500C49024 /* VideoFullScreenSampleTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,8 +465,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C9F24892C24492C00294329 /* VideoFullScreenSampleUITests.m in Sources */,
-				3C9F248B2C24492C00294329 /* VideoFullScreenSampleUITestsLaunchTests.m in Sources */,
+				4B91AA152FEF9D2800C49024 /* VideoFullScreenSampleUITests.m in Sources */,
+				4B91AA162FEF9D2800C49024 /* VideoFullScreenSampleUITestsLaunchTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,20 +486,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3C9F246B2C24492B00294329 /* Main.storyboard */ = {
+		4B91A9FC2FEF9D2200C49024 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3C9F246C2C24492B00294329 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		3C9F24702C24492C00294329 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3C9F24712C24492C00294329 /* Base */,
+				4B91A9FB2FEF9D2200C49024 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4B91A9FF2FEF9D2200C49024 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B91A9FE2FEF9D2200C49024 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -696,13 +704,19 @@
 			baseConfigurationReference = DAAA617F8A6DCA88276FC617 /* Pods-VideoFullScreenSampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 492U995837;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.VideoFullScreenSampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.taihe.*";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -718,13 +732,19 @@
 			baseConfigurationReference = ED1A1E1668766A44C6B4B798 /* Pods-VideoFullScreenSampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 492U995837;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.VideoFullScreenSampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.taihe.*";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -739,13 +759,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C4464AB24EA77F91BAC3FF46 /* Pods-VideoFullScreenSample-VideoFullScreenSampleUITests.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 492U995837;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.VideoFullScreenSampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.taihe.*";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -760,13 +786,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5F4C2BDD2908BA8207ACE654 /* Pods-VideoFullScreenSample-VideoFullScreenSampleUITests.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 492U995837;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.VideoFullScreenSampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.taihe.*";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

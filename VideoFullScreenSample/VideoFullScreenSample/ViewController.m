@@ -24,7 +24,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
 
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    //    NSLog(@"%s", __PRETTY_FUNCTION__);
 }
 
 @end
@@ -75,12 +75,26 @@
 - (void)buttonAction:(UIButton *)sender {
     KKPlayerLandscapeController *vc = [[KKPlayerLandscapeController alloc] initWithSourceView:self.containerView delegate:self];
     vc.dismissHandler = ^{
-        NSLog(@"interfaceOrientation: %ld", self.view.window.windowScene.interfaceOrientation);
-        KKSecondaryViewController *secondaryVc = [KKSecondaryViewController new];
-        [self.navigationController pushViewController:secondaryVc animated:YES];
+        NSLog(@"call dismissHandler interfaceOrientation: %ld", self.view.window.windowScene.interfaceOrientation);
+        //        KKSecondaryViewController *secondaryVc = [KKSecondaryViewController new];
+        //        [self.navigationController pushViewController:secondaryVc animated:YES];
     };
+    NSLog(@"call presentViewController interfaceOrientation: %ld", self.view.window.windowScene.interfaceOrientation);
     [self presentViewController:vc animated:YES completion:^{
 
+    }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"call touchesBegan interfaceOrientation: %ld", self.view.window.windowScene.interfaceOrientation);
+}
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> _Nonnull context) {
+
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext> _Nonnull context) {
+        NSLog(@"call ViewController viewWillTransitionToSize completion interfaceOrientation: %ld", self.view.window.windowScene.interfaceOrientation);
     }];
 }
 

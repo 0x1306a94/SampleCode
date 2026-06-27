@@ -84,10 +84,21 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     __weak typeof(self) weakSelf = self;
     void (^dismissHandler)(void) = self.dismissHandler;
+    NSLog(@"call dismissViewControllerAnimated");
     [weakSelf dismissViewControllerAnimated:YES completion:^{
         !dismissHandler ?: dismissHandler();
     }];
 }
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [coordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext> _Nonnull context) {
+
+    } completion:^(id<UIViewControllerTransitionCoordinatorContext> _Nonnull context) {
+        NSLog(@"call KKPlayerLandscapeController viewWillTransitionToSize completion interfaceOrientation: %ld", self.view.window.windowScene.interfaceOrientation);
+    }];
+}
+
 #pragma mark - Transitions
 - (__kindof UIView *)destinationContainerView {
     return self.containerView;

@@ -45,7 +45,7 @@ CGAffineTransform TransformFromSourceRect(CGRect source, CGRect target, CGFloat 
 @implementation KKPlayerLandscapeTransitionModalTransition
 #if DEBUG
 - (void)dealloc {
-    NSLog(@"[%@ dealloc]", NSStringFromClass(self.class));
+//    NSLog(@"[%@ dealloc]", NSStringFromClass(self.class));
 }
 #endif
 
@@ -109,7 +109,7 @@ CGAffineTransform TransformFromSourceRect(CGRect source, CGRect target, CGFloat 
 @implementation KKPlayerLandscapeTransitionDismissTransition
 #if DEBUG
 - (void)dealloc {
-    NSLog(@"[%@ dealloc]", NSStringFromClass(self.class));
+//    NSLog(@"[%@ dealloc]", NSStringFromClass(self.class));
 }
 #endif
 
@@ -175,7 +175,7 @@ CGAffineTransform TransformFromSourceRect(CGRect source, CGRect target, CGFloat 
 @implementation KKPlayerLandscapeTransition
 #if DEBUG
 - (void)dealloc {
-    NSLog(@"[%@ dealloc]", NSStringFromClass(self.class));
+//    NSLog(@"[%@ dealloc]", NSStringFromClass(self.class));
 }
 #endif
 
